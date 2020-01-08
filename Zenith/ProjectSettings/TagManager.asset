@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Grabbable Object
+  - Player1AttractStamina
+  - Player1RepulseStamina
+  - Player2AttractStamina
+  - Player2RepulseStamina
+  - Player1
+  - Player2
   layers:
   - Default
   - TransparentFX
