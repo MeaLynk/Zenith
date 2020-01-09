@@ -2154,7 +2154,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1865948469}
   m_FillRect: {fileID: 516652497}
   m_HandleRect: {fileID: 1865948468}
@@ -3383,6 +3383,28 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 604623392}
   m_Mesh: {fileID: 4300000, guid: f57127cfcc32ab9419af130b6a9211fb, type: 3}
+--- !u!1 &607528800 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3183089978217780959, guid: 56540fc639b855048a380dbae5720ba7,
+    type: 3}
+  m_PrefabInstance: {fileID: 3183089977876245742}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &607528801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607528800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4bcf9c7b6050f498d57b4e25ff2d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullOrbPrefab: {fileID: 1546949141215983977, guid: b6523cffde74139428acb1b82873fce9,
+    type: 3}
+  pushOrbPrefab: {fileID: 9026794161009733527, guid: e28bfc4c20d9c09429f2930d9fb108eb,
+    type: 3}
 --- !u!1 &610374924
 GameObject:
   m_ObjectHideFlags: 0
@@ -12943,7 +12965,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1532560749}
   m_FillRect: {fileID: 1425287667}
   m_HandleRect: {fileID: 1532560748}
@@ -14681,7 +14703,7 @@ GameObject:
   - component: {fileID: 2141740999}
   - component: {fileID: 2141740998}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: TempCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
