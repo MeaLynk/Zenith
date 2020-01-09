@@ -29,6 +29,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 2003003421086379165}
   - {fileID: 3183089978102130855}
   m_Father: {fileID: 3183089978217780955}
   m_RootOrder: 0
@@ -112,7 +113,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3183089977387815801}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3183089978217780959
 GameObject:
@@ -127,9 +128,10 @@ GameObject:
   - component: {fileID: 3183089978217780957}
   - component: {fileID: 3183089978217780956}
   - component: {fileID: 3183089978217780952}
+  - component: {fileID: 607528801}
   m_Layer: 0
   m_Name: RigidBodyFPSController
-  m_TagString: Player
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,14 +143,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3183089978217780959}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000016292068}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0.00000028088027}
   m_LocalPosition: {x: -30, y: 1, z: 25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3183089977387815801}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 179.99998, z: 0}
 --- !u!54 &3183089978217780954
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -172,7 +174,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3183089978217780959}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5
@@ -260,10 +262,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a66caff5e17022b4f866b91d4f87fff6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grabDistance: 15
-  lastSqrMag: 0
-  sqrMag: 0
-  item: {fileID: 0}
-  tempParent: {fileID: 3183089978102130854}
+  playerCamera: {fileID: 3183089977387815800}
+  playerGuide: {fileID: 3183089978102130854}
+  grabbedItem: {fileID: 0}
+  AttractStamina: {fileID: 0}
+  RepulseStamina: {fileID: 0}
   isHolding: 0
   inPos: 0
+  grabDistance: 25
+  pushDistance: 5
+  AttactSpeed: 65
+  throwForce: 3000
+  pushForce: 50
+--- !u!114 &607528801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3183089978217780959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4bcf9c7b6050f498d57b4e25ff2d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pullOrbPrefab: {fileID: 1546949141215983977, guid: b6523cffde74139428acb1b82873fce9,
+    type: 3}
+  pushOrbPrefab: {fileID: 9026794161009733527, guid: e28bfc4c20d9c09429f2930d9fb108eb,
+    type: 3}
+  orbEmitter: {fileID: 2003003421086379165}
+  throwSpeed: 5
+  hasBeenFired: 0
+--- !u!1 &7650712772660113309
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003003421086379165}
+  m_Layer: 0
+  m_Name: OrbEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2003003421086379165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7650712772660113309}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.791}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3183089977387815801}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
