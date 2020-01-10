@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentMode: 0
-  speed: 3
+  activeCol: {fileID: 6050374189403825155}
+  throwTimer: 10
+  activeTimer: 5
+  parent: {fileID: 0}
 --- !u!1001 &1009858899030670475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -96,6 +99,12 @@ PrefabInstance:
 --- !u!1 &9026794161009733527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8306361918205154076, guid: df72d04d9d1e84f4cb96985d51578d5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1009858899030670475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6050374189403825155 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6770179169375885448, guid: df72d04d9d1e84f4cb96985d51578d5b,
     type: 3}
   m_PrefabInstance: {fileID: 1009858899030670475}
   m_PrefabAsset: {fileID: 0}

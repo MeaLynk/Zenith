@@ -51,6 +51,7 @@ public class RemoteOrbThrow : MonoBehaviour
         }
     }
 
+    //Spawns the orb that the player fired
     private void SpawnOrb(GameObject orbPrefab)
     {
         //TODO: Add delay to spawn after animation plays
