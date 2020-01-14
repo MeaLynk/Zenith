@@ -47,7 +47,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 344}
   m_MaxSize: {x: 12008, y: 8044}
   vertical: 0
-  controlID: 125
+  controlID: 57
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -300,7 +300,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 43846
+  m_LastSelectedObjectID: 13790
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -340,20 +340,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Zenith_Files/Prefabs/Orb Prefabs
+    - Assets/Zenith_Files/Garbage
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Zenith_Files/Prefabs/Orb Prefabs
+  - Assets/Zenith_Files/Garbage
   m_LastFoldersGridSize: 64
   m_LastProjectPath: C:\Users\Administrator\Desktop\github\Zenith\Zenith
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 39}
-    m_SelectedIDs: 38320000
-    m_LastClickedID: 12856
-    m_ExpandedIDs: 00000000ec2e0000cc2f000022300000b6320000e432000000ca9a3b
+    scrollPos: {x: 0, y: 19}
+    m_SelectedIDs: 042f0000
+    m_LastClickedID: 12036
+    m_ExpandedIDs: 00000000ea2e0000ca2f000020300000b4320000e232000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -381,7 +381,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000ec2e0000b6320000
+    m_ExpandedIDs: 00000000ea2e0000b4320000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -406,8 +406,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: de350000
+    m_LastClickedInstanceID: 13790
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -502,9 +502,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 74c4ffff60faffff
+      m_SelectedIDs: de350000
+      m_LastClickedID: 13790
+      m_ExpandedIDs: 2cfaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -564,9 +564,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -24.085058, y: 1.1312424, z: 16.384855}
+    m_Target: {x: -42.612225, y: 2.1054838, z: 24.337807}
     speed: 2
-    m_Value: {x: -24.085058, y: 1.1312424, z: 16.384855}
+    m_Value: {x: -42.612225, y: 2.1054838, z: 24.337807}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -595,9 +595,9 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.0074478695, y: -0.9731985, z: 0.22767244, w: -0.031843036}
+    m_Target: {x: -0.02049449, y: -0.92028826, z: 0.04864457, w: -0.38769102}
     speed: 2
-    m_Value: {x: -0.007447798, y: -0.97318906, z: 0.22767024, w: -0.031842727}
+    m_Value: {x: -0.020494273, y: -0.9202785, z: 0.04864405, w: -0.3876869}
   m_Size:
     m_Target: 3.6960967
     speed: 2
@@ -607,8 +607,8 @@ MonoBehaviour:
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 1.1
+    m_SpeedNormalized: 0.53
     m_SpeedMin: 0.01
     m_SpeedMax: 2
     m_EasingEnabled: 1

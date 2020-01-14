@@ -62,4 +62,9 @@ public class RemoteOrbThrow : MonoBehaviour
         Vector3 dir = mainCameraTrans.forward; //Dir player is facing INCLUDING rotation
         newOrb.GetComponent<Rigidbody>().AddForce(dir * throwSpeed, ForceMode.Impulse);
     }
+
+    private void OnGUI()
+    {
+        GUI.Box(new Rect(new Rect(10, 10, 200, 30)), "Can Fire Orb: " + !hasBeenFired);
+    }
 }

@@ -14,6 +14,8 @@ public class RemoteOrbMine : MonoBehaviour
 
     public Mode currentMode;
     public GameObject activeCol;
+    public float pushPower = 10;
+    public float pullPower = 10;
     public float throwTimer = 10;
     public float activeTimer = 5;
 
@@ -60,14 +62,19 @@ public class RemoteOrbMine : MonoBehaviour
     {
         if(other.gameObject.tag == "Orb-able Area")
         {
-            Debug.Log("Orb Successfully Activated.");
+            //Debug.Log("Orb Successfully Activated. Hit: " + other.gameObject.tag);
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             isActive = true;
             currentTimer = activeTimer; //Resets timer for active time legnth
         }
-        else
+        else if (other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2")
         {
-            Debug.Log("Orb Failed to Activate.");
+            //Debug.LogWarning("Ignored Collision. Hit: " + other.gameObject.tag);
+            //Do nothing, ignore collision
+        }
+        else if (isActive == false)
+        {
+            //Debug.LogWarning("Orb Failed to Activate. Hit: " + other.gameObject.tag);
             parent.hasBeenFired = false; //Resets throw
             Destroy(gameObject);
         }
@@ -82,11 +89,13 @@ public class RemoteOrbMine : MonoBehaviour
 
                 if (currentMode == Mode.PULL)
                 {
-                    Debug.Log(obj.name + " Is in the area.");
+                    obj.GetComponent<Rigidbody>().AddForce((transform.position - obj.transform.position).normalized * pullPower, ForceMode.Impulse);
+                    //Debug.Log(obj.name + " Is in the area.");
                 }
                 else if (currentMode == Mode.PUSH)
                 {
-
+                    Debug.Log("Pushed away: " + obj.name + " at velocity of: " + -(transform.position - obj.transform.position).normalized * pushPower);
+                    obj.GetComponent<Rigidbody>().AddForce(-(transform.position - obj.transform.position).normalized * pushPower, ForceMode.Impulse);
                 }
             }
             //else //Obj left active area
