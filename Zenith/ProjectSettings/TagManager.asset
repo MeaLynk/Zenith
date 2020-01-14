@@ -11,6 +11,8 @@ TagManager:
   - Player2RepulseStamina
   - Player1
   - Player2
+  - Orb-able Area
+  - Runt
   layers:
   - Default
   - TransparentFX

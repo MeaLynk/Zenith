@@ -12,36 +12,59 @@ public class RemoteOrbThrow : MonoBehaviour
 {
     public GameObject pullOrbPrefab;
     public GameObject pushOrbPrefab;
+    public Transform orbEmitter;
+    public float throwSpeed = 5.0f;
 
-    private bool hasBeenPressed = false; //NOO HOLD
+    [HideInInspector]
+    public bool hasBeenFired = false;
+
+    private Transform mainCameraTrans;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCameraTrans = GetComponentInChildren<Camera>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetButton("PullOrb"))
+        //TODO: Add stanima check/update when stanima is put into it's own script
+
+        if (Input.GetButton("PullOrb"))
         {
-            if(hasBeenPressed == false)
+            if(hasBeenFired == false)
             {
                 SpawnOrb(pullOrbPrefab);
-                hasBeenPressed = true;
+                hasBeenFired = true;
             }
 
-            Debug.Log("PullOrb Pressed");
+            //Debug.Log("PullOrb Pressed");
         }
         else if(Input.GetButton("PushOrb"))
         {
-
+            if (hasBeenFired == false)
+            {
+                SpawnOrb(pushOrbPrefab);
+                hasBeenFired = true;
+            }
         }
     }
 
+    //Spawns the orb that the player fired
     private void SpawnOrb(GameObject orbPrefab)
     {
+        //TODO: Add delay to spawn after animation plays
 
+        GameObject newOrb = Instantiate(orbPrefab, orbEmitter.position, orbEmitter.rotation, null);
+        newOrb.GetComponent<RemoteOrbMine>().parent = this;
+
+        Vector3 dir = mainCameraTrans.forward; //Dir player is facing INCLUDING rotation
+        newOrb.GetComponent<Rigidbody>().AddForce(dir * throwSpeed, ForceMode.Impulse);
+    }
+
+    private void OnGUI()
+    {
+        GUI.Box(new Rect(new Rect(10, 10, 200, 30)), "Can Fire Orb: " + !hasBeenFired);
     }
 }
