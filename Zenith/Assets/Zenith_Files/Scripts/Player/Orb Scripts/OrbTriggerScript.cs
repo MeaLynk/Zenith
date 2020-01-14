@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿//--------------------------------------------------------------
+//  Remote Orb Trigger Script
+//  By: Kameron Brodhagen
+//
+//  Script attached to the trigger object as the child of the orb to get objects to be affected
+//--------------------------------------------------------------
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

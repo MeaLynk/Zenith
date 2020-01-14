@@ -62,49 +62,75 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Adolescent\AdolescentChargeState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Adolescent\AdolescentChaseState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Adolescent\AdolescentDeadState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Adolescent\AdolescentIdleState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Adolescent\AdolescentMeleeState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Adolescent\NPCAdolescentController.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\AdvancedFSM.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\FSM.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\FSMState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\GridManager.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Node.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\NPCRuntController.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\RuntChaseState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\RuntDeadState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\RuntFleeState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\RuntIdleState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\RuntMeleeAttackState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\Runt\RuntRangedAttackState.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\AI\SlotManager.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\Health.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\LabPuzzle\LabMachine.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\LabPuzzle\ZenithMaterial.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\Player\Attract And Repulse\Pickup.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\Player\CurveControlledBob.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\Player\FOVKick.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\Player\LerpControlledBob.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\Player\Movement\MouseLookScript.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\Player\Movement\RigidbodyController.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\Player\Orb Scripts\OrbTriggerScript.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\Player\Orb Scripts\RemoteOrbMine.cs" />
     <Compile Include="Assets\Zenith_Files\Scripts\Player\Orb Scripts\RemoteOrbThrow.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Zenith_Files\Scripts\UsefullFunctions.cs" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -284,13 +310,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/Administrator/Desktop/github/Zenith New New/Zenith/Zenith/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/Administrator/Desktop/GitHub/Zenith/Zenith/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.2.2f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
