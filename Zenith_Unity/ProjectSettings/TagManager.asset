@@ -13,6 +13,13 @@ TagManager:
   - Player2
   - Orb-able Area
   - Runt
+  - Obstacle
+  - WayPoint
+  - S1SP
+  - FleePoint
+  - S2SP
+  - PSP
+  - Adolescent
   layers:
   - Default
   - TransparentFX
@@ -22,8 +29,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - PlayerOneLayer
+  - PlayerTwoLayer
   - 
   - 
   - 
