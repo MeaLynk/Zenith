@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
         }
         foreach (GameObject asp in GameObject.FindGameObjectsWithTag("S2SP"))
         {
-            adolescentPrefab.GetComponent<NPCAdolescentController>().pointList = wayPoints.ToArray();
+            adolescentPrefab.GetComponent<NPCAdolescentController>().pointList = wayPoints.ToArray(); 
             adolescentPrefab.GetComponent<NPCAdolescentController>().fleePoints = fleePoints.ToArray();
             adolescents.Add(Instantiate(adolescentPrefab, asp.transform.position, new Quaternion(0.0f, 0.0f, 0.0f, 0.0f)));
 

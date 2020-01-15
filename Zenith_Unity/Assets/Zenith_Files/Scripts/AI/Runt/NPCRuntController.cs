@@ -84,7 +84,7 @@ public class NPCRuntController : AdvancedFSM
             RigidBody = this.GetComponent<Rigidbody>();
         else
             RigidBody = this.gameObject.AddComponent<Rigidbody>();
-
+        
         PlayerTarget = 0;
 
         // Create the FSM for the runt.
@@ -189,7 +189,7 @@ public class NPCRuntController : AdvancedFSM
             }
         }
         PlayerTarget = closestPlayerIndex;
-
+       
         return GameManager.instance.Players[closestPlayerIndex].transform.position;
     }
 

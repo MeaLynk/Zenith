@@ -633,6 +633,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad0f11dfe81a7d48a96cae2179ac8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navAgent: {fileID: 7636010498215098977}
+  health: {fileID: 0}
+  rigBody: {fileID: 0}
   pointList:
   - {fileID: 0}
   - {fileID: 0}
@@ -684,11 +687,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7636010498215098976}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685669120fde4df40ae77ec9a67795e5, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d86f5aa16dac5e42b4cd9b9358a8128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   meleeDamage: 5
-  meleeAttackRate: 0.5
+  meleeAttackRate: 1
   rangedDamage: 10
 --- !u!1 &7636010498285886645
 GameObject:

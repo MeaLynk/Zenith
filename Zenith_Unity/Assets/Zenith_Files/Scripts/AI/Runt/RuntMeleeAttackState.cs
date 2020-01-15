@@ -12,7 +12,7 @@ public class RuntMeleeAttackState : FSMState
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
     RuntAttack runtAttack;                                          //RuntAttack script attached to the objects
-
+    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntMeleeAttackState(Transform[] wp, NPCRuntController npcRunt)
@@ -105,7 +105,7 @@ public class RuntMeleeAttackState : FSMState
     {
         Transform runtTransform = npcRuntController.transform;
         Vector3 closestplayer = npcRuntController.GetClosestPlayer();
-
+        
         Quaternion leftQuatMax = Quaternion.AngleAxis(-45, new Vector3(0, 1, 0));
         Quaternion rightQuatMax = Quaternion.AngleAxis(45, new Vector3(0, 1, 0));
 

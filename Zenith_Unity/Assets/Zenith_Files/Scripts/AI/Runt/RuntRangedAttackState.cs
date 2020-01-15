@@ -12,7 +12,7 @@ public class RuntRangedAttackState : FSMState
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
 
     //EnemyTankShooting enemyTankShooting;            //EnemyTankShooting script attached tothe objects
-
+        
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntRangedAttackState(Transform[] wp, NPCRuntController npcRunt)
@@ -49,7 +49,7 @@ public class RuntRangedAttackState : FSMState
     {
         Transform runtTransform = npcRuntController.transform;
         Vector3 closestplayer = npcRuntController.GetClosestPlayer();
-
+        
         if (health && health.IsDead())
         {
             //if the health script is present on the runt and its dead, transition to the dead

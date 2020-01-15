@@ -77,16 +77,16 @@ public class Pickup : MonoBehaviour
                         //if (AttractStamina.value - objectMass >= 0)
                         //{
                         //    StopCoroutine(refilStam(true));
-                            objRender = grabbedItem.GetComponent<Renderer>();
-                            objCollider = grabbedItem.GetComponent<Collider>();
+                        objRender = grabbedItem.GetComponent<Renderer>();
+                        objCollider = grabbedItem.GetComponent<Collider>();
 
-                            objColor = objRender.material.color;
-                            objRigid.useGravity = false;
-                            objRender.material.color = new Color(objColor.r, objColor.g, objColor.b, 0.5f);
+                        objColor = objRender.material.color;
+                        objRigid.useGravity = false;
+                        objRender.material.color = new Color(objColor.r, objColor.g, objColor.b, 0.5f);
 
-                            //useStamina(true, objectMass);
+                        //useStamina(true, objectMass);
 
-                            isHolding = true;
+                        isHolding = true;
 
                         //    aElapsedTime = 0;
                         //}
@@ -103,7 +103,7 @@ public class Pickup : MonoBehaviour
                 }
             }
         }
-        else if(Input.GetMouseButtonUp(0))
+        else if (Input.GetMouseButtonUp(0))
         {
             if (grabbedItem != null)
             {
@@ -131,19 +131,19 @@ public class Pickup : MonoBehaviour
             //    StopCoroutine(refilStam(false));
             //    useStamina(false, 20);
 
-                RaycastHit[] raycastHit;
+            RaycastHit[] raycastHit;
 
-                raycastHit = Physics.SphereCastAll(playerCamera.transform.position, 1.5f, playerCamera.transform.forward, pushDistance);
+            raycastHit = Physics.SphereCastAll(playerCamera.transform.position, 1.5f, playerCamera.transform.forward, pushDistance);
 
-                for (int i = 0; i < raycastHit.Length; i++)
+            for (int i = 0; i < raycastHit.Length; i++)
+            {
+                if (raycastHit[i].collider.tag == "Grabbable Object")
                 {
-                    if (raycastHit[i].collider.tag == "Grabbable Object")
-                    {
-                        Vector3 dir = (raycastHit[i].transform.position - playerGuide.transform.position).normalized * pushForce;
+                    Vector3 dir = (raycastHit[i].transform.position - playerGuide.transform.position).normalized * pushForce;
 
-                        raycastHit[i].collider.gameObject.GetComponent<Rigidbody>().velocity = dir;
-                    }
+                    raycastHit[i].collider.gameObject.GetComponent<Rigidbody>().velocity = dir;
                 }
+            }
 
             //    rElapsedTime = 0;
             //}
@@ -165,18 +165,18 @@ public class Pickup : MonoBehaviour
                 //    StopCoroutine(refilStam(false));
                 //    useStamina(false, objectMass);
 
-                    grabbedItem.transform.SetParent(null);
-                    objRigid.AddForce(playerGuide.transform.forward * throwForce * objRigid.mass);
-                    objRigid.useGravity = true;
-                    objRender.material.color = objColor;
-                    objRigid.mass = objectMass;
-                    objectMass = 0;
-                    isHolding = false;
-                    grabbedItem = null;
-                    objRigid = null;
-                    objRender = null;
-                    objCollider = null;
-                    objColor = Color.white;
+                grabbedItem.transform.SetParent(null);
+                objRigid.AddForce(playerGuide.transform.forward * throwForce * objRigid.mass);
+                objRigid.useGravity = true;
+                objRender.material.color = objColor;
+                objRigid.mass = objectMass;
+                objectMass = 0;
+                isHolding = false;
+                grabbedItem = null;
+                objRigid = null;
+                objRender = null;
+                objCollider = null;
+                objColor = Color.white;
                 //    rElapsedTime = 0;
                 //}
                 //else

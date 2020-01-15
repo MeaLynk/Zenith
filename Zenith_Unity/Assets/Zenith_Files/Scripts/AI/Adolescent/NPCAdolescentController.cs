@@ -11,19 +11,15 @@ using System.Collections.Generic;
 public class NPCAdolescentController : AdvancedFSM
 {
     public static int SLOT_DIST = 2;
+    public static int WAYPOINT_DIST = 5;
     public static int ATTACK_DIST = 3;
     public static int CHASE_DIST = 10;
     public static int FLEE_DIST = 6;
-    public SlotManager coverPositionsSlotManager;
-    public NavMeshAgent navAgent;
-    public Health health;
 
-    [HideInInspector]
-    public Rigidbody rigBody;
-
-    [HideInInspector]
-    public bool receivedAttackCommand = false;
-
+    [HideInInspector] public NavMeshAgent navAgent;
+    [HideInInspector] public Health health;
+    [HideInInspector] public Rigidbody rigBody;
+    [HideInInspector] public bool receivedAttackCommand = false;
     [HideInInspector] public Transform[] pointList;
     [HideInInspector] public Transform[] fleePoints;
 

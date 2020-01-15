@@ -87,10 +87,16 @@ public class AdolescentIdleState : FSMState
     // Act() is used to tell the adolescent what to do when it is in the idle state
     public override void Act()
     {
-        if (Vector3.Distance(npcAdolescentController.transform.position, destPos) < NPCAdolescentController.SLOT_DIST)
+        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+        npcAdolescentController.navAgent.CalculatePath(destPos, path);
+
+        if (path.status != UnityEngine.AI.NavMeshPathStatus.PathComplete)
         {
-            Vector3 newDestPos = waypoints[Random.Range(0, waypoints.Length)].position;
-            destPos = newDestPos;
+            destPos = waypoints[Random.Range(0, waypoints.Length)].position;
+        }
+        else if (Vector3.Distance(npcAdolescentController.transform.position, destPos) < NPCAdolescentController.WAYPOINT_DIST)
+        {
+            destPos = waypoints[Random.Range(0, waypoints.Length)].position;
         }
 
         //look towards way point

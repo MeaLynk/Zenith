@@ -42,12 +42,12 @@ public class RemoteOrbMine : MonoBehaviour
     void Update()
     {
 
-        if (isActive == true)
+        if(isActive == true)
         {
             OrbFunctionality();
         }
 
-        if (currentTimer > 0)
+        if(currentTimer > 0)
         {
             currentTimer -= Time.deltaTime;
         }
@@ -60,7 +60,7 @@ public class RemoteOrbMine : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Orb-able Area")
+        if(other.gameObject.tag == "Orb-able Area")
         {
             //Debug.Log("Orb Successfully Activated. Hit: " + other.gameObject.tag);
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;

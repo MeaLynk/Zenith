@@ -10,7 +10,7 @@ public class RuntFleeState : FSMState
     NPCRuntController npcRuntController;                            //NPCRuntController script to object
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
-
+    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntFleeState(Transform[] wp, NPCRuntController npcRunt)

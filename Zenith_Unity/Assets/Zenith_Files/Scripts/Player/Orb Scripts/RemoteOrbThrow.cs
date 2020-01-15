@@ -48,12 +48,12 @@ public class RemoteOrbThrow : MonoBehaviour
         float pullAxis = 0;
         float pushAxis = 0;
 
-        if (currentPlayer == PlayerType.PLAYER1)
+        if(currentPlayer == PlayerType.PLAYER1)
         {
             pullAxis = Input.GetAxis("PlayerOne_PullOrb");
             pushAxis = Input.GetAxis("PlayerOne_PushOrb");
         }
-        else if (currentPlayer == PlayerType.PLAYER2)
+        else if(currentPlayer == PlayerType.PLAYER2)
         {
             pullAxis = Input.GetAxis("PlayerTwo_PullOrb");
             pushAxis = Input.GetAxis("PlayerTwo_PushOrb");
@@ -61,7 +61,7 @@ public class RemoteOrbThrow : MonoBehaviour
 
         if (pullAxis > 0)
         {
-            if (hasBeenFired == false)
+            if(hasBeenFired == false)
             {
                 SpawnOrb(pullOrbPrefab);
                 hasBeenFired = true;
@@ -69,7 +69,7 @@ public class RemoteOrbThrow : MonoBehaviour
 
             //Debug.Log("PullOrb Pressed");
         }
-        else if (pushAxis > 0)
+        else if(pushAxis > 0)
         {
             if (hasBeenFired == false)
             {

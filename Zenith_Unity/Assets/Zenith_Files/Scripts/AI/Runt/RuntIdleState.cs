@@ -8,7 +8,7 @@ public class RuntIdleState : FSMState
 {
     NPCRuntController npcRuntController;            //NPCRuntController script to runt
     Health health;                                  //Health script attached to runt
-
+    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntIdleState(Transform[] wp, NPCRuntController npcRunt)
@@ -16,7 +16,7 @@ public class RuntIdleState : FSMState
         //assign the object's scripts
         npcRuntController = npcRunt;
         health = npcRunt.Health;
-
+                
         //assign speed, waypoints and the stateID
         waypoints = wp;
         stateID = FSMStateID.Idle;

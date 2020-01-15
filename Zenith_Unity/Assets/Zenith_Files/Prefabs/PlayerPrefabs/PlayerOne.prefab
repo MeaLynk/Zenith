@@ -160,7 +160,7 @@ Transform:
   - {fileID: 3055609668872341638}
   - {fileID: 3055609668682295535}
   - {fileID: 4671986110874364851}
-  - {fileID: 8096437491649504209}
+  - {fileID: 4175331365442177141}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 3055609668873885316}
-  playerGuide: {fileID: 4093181187370876567}
+  playerGuide: {fileID: 4318395311262267202}
   grabbedItem: {fileID: 0}
   isHolding: 0
   inPos: 0
@@ -532,7 +532,7 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3055609668872508582}
   m_Enabled: 1
---- !u!1 &4093181187370876567
+--- !u!1 &4318395311262267202
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -540,24 +540,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8096437491649504209}
-  m_Layer: 0
+  - component: {fileID: 4175331365442177141}
+  m_Layer: 8
   m_Name: Guide
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8096437491649504209
+--- !u!4 &4175331365442177141
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4093181187370876567}
+  m_GameObject: {fileID: 4318395311262267202}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.8, z: 2.966}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 3055609668872341636}
   m_RootOrder: 3
