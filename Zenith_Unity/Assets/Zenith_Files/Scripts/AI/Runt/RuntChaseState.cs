@@ -18,23 +18,19 @@ public class RuntChaseState : FSMState
 
     //current playerSlot index
     int availSlotIndex;
-
-    //the distance from the player to the runt
-    List<float> playerDistances = new List<float>();
-
+    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntChaseState(Transform[] wp, NPCRuntController npcRunt)
     {
         //assign the object's scripts
         npcRuntController = npcRunt;
-        health = npcRunt.health;
+        health = npcRunt.Health;
         playerHealths = new List<Health>();
 
         for (int i = 0; i < GameManager.instance.Players.Count; i++)
         {
             playerHealths.Add(GameManager.instance.Players[i].GetComponent<Health>());
-            playerDistances.Add(Vector3.Distance(npcRunt.transform.position, GameManager.instance.Players[i].transform.position));
         }
 
         //assign speed, waypoints, the stateID, and the timers
@@ -52,19 +48,9 @@ public class RuntChaseState : FSMState
     public override void EnterStateInit()
     {
         // get a slot position
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestPlayerSlots = npcRuntController.GetPlayerSlotManager(closerPlayer);
+        closestPlayerSlots = npcRuntController.GetPlayerSlotManager(npcRuntController.PlayerTarget);
         closestPlayerSlots.ClearSlots(npcRuntController.gameObject);
         availSlotIndex = closestPlayerSlots.ReserveSlotAroundObject(npcRuntController.gameObject);
 
@@ -76,7 +62,7 @@ public class RuntChaseState : FSMState
         else
         {
             //otherwise, assign the destPos to be the player's position
-            destPos = npcRuntController.GetPlayerTransform(closerPlayer).position;
+            destPos = closestplayer;
         }
 
         elapsedTime = 0.0f;
@@ -88,23 +74,9 @@ public class RuntChaseState : FSMState
     public override void Reason()
     {
         Transform runtTransform = npcRuntController.transform;
-        Vector3 closestPlayerPos;
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
-        int closestPlayerIndex = 0;
-        float closestPlayerDist = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(runtTransform.position, npcRuntController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < closestPlayerDist)
-            {
-                closestPlayerDist = playerDistances[i];
-                closestPlayerIndex = i;
-            }
-        }
-
-        closestPlayerPos = npcRuntController.GetPlayerTransform(closestPlayerIndex).position;
-        closestPlayerSlots = npcRuntController.GetPlayerSlotManager(closestPlayerIndex);
+        closestPlayerSlots = npcRuntController.GetPlayerSlotManager(npcRuntController.PlayerTarget);
 
         if (health && health.IsDead())
         {
@@ -128,7 +100,7 @@ public class RuntChaseState : FSMState
             return;
         }
 
-        if (IsInCurrentRange(runtTransform, closestPlayerPos, NPCRuntController.FLEE_DIST))
+        if (IsInCurrentRange(runtTransform, closestplayer, NPCRuntController.FLEE_DIST))
         {
             if ((health && health.CurrentHealth <= 10) || GameManager.instance.RuntCount == 1)
             {
@@ -150,7 +122,7 @@ public class RuntChaseState : FSMState
             }
             else
             {
-                destPos = npcRuntController.GetPlayerTransform(closestPlayerIndex).position;
+                destPos = closestplayer;
             }
         }
 
@@ -180,8 +152,8 @@ public class RuntChaseState : FSMState
         npcRuntController.transform.rotation = Quaternion.Slerp(npcRuntController.transform.rotation, targetRotation,
                                                                 curRotSpeed * Time.deltaTime);
 
-        npcRuntController.navAgent.speed = curSpeed;
-        npcRuntController.navAgent.SetDestination(destPos);
+        npcRuntController.NavAgent.speed = curSpeed;
+        npcRuntController.NavAgent.SetDestination(destPos);
     }
 
 }

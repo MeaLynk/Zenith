@@ -12,22 +12,18 @@ public class RuntMeleeAttackState : FSMState
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
     //EnemyTankShooting enemyTankShooting;                          //EnemyTankShooting script attached to the objects
-
-    //the distance from the player to the runt
-    List<float> playerDistances = new List<float>();
-    
+        
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntMeleeAttackState(Transform[] wp, NPCRuntController npcRunt)
     {
         //assign the object's scripts
         npcRuntController = npcRunt;
-        health = npcRunt.health;
+        health = npcRunt.Health;
 
         for (int i = 0; i < GameManager.instance.Players.Count; i++)
         {
             playerHealths.Add(GameManager.instance.Players[i].GetComponent<Health>());
-            playerDistances.Add(Vector3.Distance(npcRunt.transform.position, GameManager.instance.Players[i].transform.position));
         }
 
         //enemyTankShooting = npcRuntController.GetComponent<EnemyTankShooting>();
@@ -52,22 +48,7 @@ public class RuntMeleeAttackState : FSMState
     public override void Reason()
     {
         Transform runtTransform = npcRuntController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(runtTransform.position, npcRuntController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcRuntController.GetPlayerTransform(closerPlayer).position;
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
         if (health && health.IsDead())
         {
@@ -128,21 +109,7 @@ public class RuntMeleeAttackState : FSMState
     {
 
         Transform npc = npcRuntController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcRuntController.GetPlayerTransform(closerPlayer).position;
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
         Quaternion leftQuatMax = Quaternion.AngleAxis(-45, new Vector3(0, 1, 0));
         Quaternion rightQuatMax = Quaternion.AngleAxis(45, new Vector3(0, 1, 0));
@@ -157,7 +124,7 @@ public class RuntMeleeAttackState : FSMState
         // Rotate the enemy
         npc.rotation = Quaternion.Slerp(npc.rotation, targetRot, Time.deltaTime * curRotSpeed);
 
-        npcRuntController.navAgent.speed = curSpeed;
+        npcRuntController.NavAgent.speed = curSpeed;
 
     }
 

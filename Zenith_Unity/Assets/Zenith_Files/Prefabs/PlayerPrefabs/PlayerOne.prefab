@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 3055609668682295520}
   - component: {fileID: 3055609668682295521}
   - component: {fileID: 3055609668682295534}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3055609668872508580}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc4bcf9c7b6050f498d57b4e25ff2d44, type: 3}
   m_Name: 
@@ -504,7 +504,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 567
+    m_Bits: 311
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -574,7 +574,7 @@ GameObject:
   - component: {fileID: 6630659247254055056}
   - component: {fileID: 2530601666203833776}
   - component: {fileID: 4378228308911640659}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -664,7 +664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3534489855908876005}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Arms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -699,7 +699,7 @@ GameObject:
   - component: {fileID: 5232428755664921436}
   - component: {fileID: 4887879625942951513}
   - component: {fileID: 5448350382183554914}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: LeftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

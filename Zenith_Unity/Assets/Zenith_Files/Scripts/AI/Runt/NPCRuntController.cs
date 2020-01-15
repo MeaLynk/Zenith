@@ -10,19 +10,19 @@ using System.Collections.Generic;
 
 public class NPCRuntController : AdvancedFSM
 {
-    public GameObject destination;
     public static int SLOT_DIST = 3;
     public static int ATTACK_DIST = 3;
     public static int RANGED_ATTACK_DIST = 12;
     public static int CHASE_DIST = 10;
     public static int FLEE_DIST = 6;
 
-    [HideInInspector] public NavMeshAgent navAgent;
-    [HideInInspector] public Health health;
-    [HideInInspector] public Rigidbody rigBody;
-    [HideInInspector] public bool receivedAttackCommand = false;
+    public NavMeshAgent NavAgent { get; set; }
+    public Health Health { get; set; }
+    public Rigidbody RigidBody { get; set; }
     [HideInInspector] public Transform[] pointList;
     [HideInInspector] public Transform[] fleePoints;
+
+    public int PlayerTarget { get; set; }
 
     public Transform GetPlayerTransform(int index)
     {
@@ -71,11 +71,22 @@ public class NPCRuntController : AdvancedFSM
     // Initialize the FSM for the NPC runt.
     protected override void Initialize()
     {
-        navAgent = this.GetComponent<NavMeshAgent>();
-        health = this.GetComponent<Health>();
-        rigBody = this.GetComponent<Rigidbody>();
+        if (this.GetComponent<NavMeshAgent>())
+            NavAgent = this.GetComponent<NavMeshAgent>();
+        else
+            NavAgent = this.gameObject.AddComponent<NavMeshAgent>();
 
-        receivedAttackCommand = false;
+        if (this.GetComponent<Health>())
+            Health = this.GetComponent<Health>();
+        else
+            Health = this.gameObject.AddComponent<Health>();
+
+        if (this.GetComponent<Rigidbody>())
+            RigidBody = this.GetComponent<Rigidbody>();
+        else
+            RigidBody = this.gameObject.AddComponent<Rigidbody>();
+
+        PlayerTarget = 0;
 
         // Create the FSM for the runt.
         ConstructFSM();
@@ -145,35 +156,42 @@ public class NPCRuntController : AdvancedFSM
 
     }
 
-    private void OnReceiveAttackCommand()
-    {
-        if (CurrentStateID == FSMStateID.MeleeAttacking || CurrentStateID == FSMStateID.RangedAttacking)
-        {
-            receivedAttackCommand = true;
-        }
-    }
-
-    private void OnReceiveStopAttackCommand()
-    {
-        receivedAttackCommand = false;
-    }
-
     private void OnEnable()
     {
         CurrentStateID = FSMStateID.Idle;
 
-        if (navAgent)
+        if (NavAgent)
         {
-            navAgent.enabled = true;
-            navAgent.isStopped = false;
+            NavAgent.enabled = true;
+            NavAgent.isStopped = false;
         }
     }
 
     private void OnDisable()
     {
-        if (navAgent && navAgent.isActiveAndEnabled)
+        if (NavAgent && NavAgent.isActiveAndEnabled)
         {
-            navAgent.isStopped = true;
+            NavAgent.isStopped = true;
         }
+    }
+
+    public Vector3 GetClosestPlayer()
+    {
+        int closestPlayerIndex = 0;
+        float closestPlayerDist = float.PositiveInfinity;
+
+        for (int i = 0; i < GameManager.instance.Players.Count; i++)
+        {
+            float currentDist = Vector3.Distance(this.transform.position, GetPlayerTransform(i).position);
+            if (currentDist < closestPlayerDist)
+            {
+                closestPlayerDist = currentDist;
+                closestPlayerIndex = i;
+            }
+        }
+        PlayerTarget = closestPlayerIndex;
+
+        return GetPlayerTransform(closestPlayerIndex).position;
+
     }
 }

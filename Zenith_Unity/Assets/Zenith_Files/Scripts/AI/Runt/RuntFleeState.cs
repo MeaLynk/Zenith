@@ -10,22 +10,18 @@ public class RuntFleeState : FSMState
     NPCRuntController npcRuntController;                            //NPCRuntController script to object
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
-
-    //the distance from the player to the runt
-    List<float> playerDistances = new List<float>();
-
+    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntFleeState(Transform[] wp, NPCRuntController npcRunt)
     {
         //assign the object's scripts
         npcRuntController = npcRunt;
-        health = npcRunt.health;
+        health = npcRunt.Health;
 
         for (int i = 0; i < GameManager.instance.Players.Count; i++)
         {
             playerHealths.Add(GameManager.instance.Players[i].GetComponent<Health>());
-            playerDistances.Add(Vector3.Distance(npcRunt.transform.position, GameManager.instance.Players[i].transform.position));
         }
 
         //assign speed, waypoints, and the stateID
@@ -42,27 +38,16 @@ public class RuntFleeState : FSMState
     {
         //get the waypoint's position that is farthest from the player and sets it 
         //as the destination position
-        int closerPlayer = -1;
-        float playerdistance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(npcRuntController.transform.position, npcRuntController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < playerdistance)
-            {
-                playerdistance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
         float distance = 0.0f;
         Vector3 hidePos = Vector3.zero;
 
         for (int i = 0; i < waypoints.Length - 1; i++)
         {
-            if (Vector3.Distance(npcRuntController.GetPlayerTransform(closerPlayer).position, waypoints[i].transform.position) > distance)
+            if (Vector3.Distance(closestplayer, waypoints[i].transform.position) > distance)
             {
-                distance = Vector3.Distance(npcRuntController.GetPlayerTransform(closerPlayer).position, waypoints[i].transform.position);
+                distance = Vector3.Distance(closestplayer, waypoints[i].transform.position);
                 hidePos = waypoints[i].position;
             }
         }
@@ -76,22 +61,7 @@ public class RuntFleeState : FSMState
     public override void Reason()
     {
         Transform runtTransform = npcRuntController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(runtTransform.position, npcRuntController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcRuntController.GetPlayerTransform(closerPlayer).position;
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
         if (health && health.IsDead())
         {
@@ -133,22 +103,8 @@ public class RuntFleeState : FSMState
     {
         if (IsInCurrentRange(npcRuntController.transform, destPos, NPCRuntController.SLOT_DIST))
         {
-            Vector3 closestplayer;
-
-            int closerPlayer = -1;
-            float playerDistance = float.PositiveInfinity;
-
-            for (int i = 0; i < GameManager.instance.Players.Count; i++)
-            {
-                if (playerDistances[i] < playerDistance)
-                {
-                    playerDistance = playerDistances[i];
-                    closerPlayer = i;
-                }
-            }
-
-            closestplayer = npcRuntController.GetPlayerTransform(closerPlayer).position;
-
+            Vector3 closestplayer = npcRuntController.GetClosestPlayer();
+            
             float distance = 0.0f;
             Vector3 hidePos = Vector3.zero;
 
@@ -164,8 +120,8 @@ public class RuntFleeState : FSMState
             destPos = hidePos;
         }
 
-        npcRuntController.navAgent.speed = curSpeed;
-        npcRuntController.navAgent.SetDestination(destPos);
+        npcRuntController.NavAgent.speed = curSpeed;
+        npcRuntController.NavAgent.SetDestination(destPos);
     }
 
 }

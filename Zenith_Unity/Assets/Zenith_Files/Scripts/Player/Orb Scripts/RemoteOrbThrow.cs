@@ -28,11 +28,11 @@ public class RemoteOrbThrow : MonoBehaviour
     {
         mainCameraTrans = GetComponentInChildren<Camera>().transform;
 
-        if(gameObject.tag == "Player1")
+        if(this.GetComponent<PlayerController>().PlayerNumber == 1)
         {
             currentPlayer = PlayerType.PLAYER1;
         }
-        else if(gameObject.tag == "Player2")
+        else if(this.GetComponent<PlayerController>().PlayerNumber == 2)
         {
             currentPlayer = PlayerType.PLAYER2;
         }

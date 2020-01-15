@@ -10,20 +10,14 @@ public class RuntIdleState : FSMState
     NPCRuntController npcRuntController;            //NPCRuntController script to object
     Health health;                                  //Health script attached to object
 
-    //the distance from the player to the runt
-    List<float> playerDistances = new List<float>();
-
+    //----------------------------------------------------------------------------------------------
+    // Constructor
     public RuntIdleState(Transform[] wp, NPCRuntController npcRunt)
     {
         //assign the object's scripts
         npcRuntController = npcRunt;
-        health = npcRunt.health;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances.Add(Vector3.Distance(npcRunt.transform.position, GameManager.instance.Players[i].transform.position));
-        }
-
+        health = npcRunt.Health;
+        
         //assign speed, waypoints and the stateID
         waypoints = wp;
         stateID = FSMStateID.Idle;
@@ -35,9 +29,7 @@ public class RuntIdleState : FSMState
     // EnterStateInit() is used to initialize the runt when they enter the idle state
     public override void EnterStateInit()
     {
-        GameObject randomWayPoint = waypoints[Random.Range(0, waypoints.Length)].gameObject;
-        destPos = randomWayPoint.transform.position;
-        npcRuntController.destination = randomWayPoint;
+        destPos = waypoints[Random.Range(0, waypoints.Length)].position;
     }
 
     //----------------------------------------------------------------------------------------------
@@ -46,22 +38,7 @@ public class RuntIdleState : FSMState
     public override void Reason()
     {
         Transform runtTransform = npcRuntController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = 0;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(runtTransform.position, npcRuntController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcRuntController.GetPlayerTransform(closerPlayer).position;
+        Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
         if (health && health.IsDead())
         {
@@ -88,21 +65,15 @@ public class RuntIdleState : FSMState
     public override void Act()
     {
         UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
-        npcRuntController.navAgent.CalculatePath(destPos, path);
+        npcRuntController.NavAgent.CalculatePath(destPos, path);
 
         if (path.status != UnityEngine.AI.NavMeshPathStatus.PathComplete)
         {
-            GameObject randomWayPoint = waypoints[Random.Range(0, waypoints.Length)].gameObject;
-            
-            destPos = randomWayPoint.transform.position;
-            npcRuntController.destination = randomWayPoint;
+            destPos = waypoints[Random.Range(0, waypoints.Length)].position;
         }
         else if (Vector3.Distance(npcRuntController.transform.position, destPos) < NPCRuntController.SLOT_DIST)
         {
-            GameObject randomWayPoint = waypoints[Random.Range(0, waypoints.Length)].gameObject;
-
-            destPos = randomWayPoint.transform.position;
-            npcRuntController.destination = randomWayPoint;
+            destPos = waypoints[Random.Range(0, waypoints.Length)].position;
         }
 
         //look towards way point
@@ -110,8 +81,8 @@ public class RuntIdleState : FSMState
         npcRuntController.transform.rotation = Quaternion.Slerp(npcRuntController.transform.rotation, targetRotation,
                                                                 curRotSpeed * Time.deltaTime);
 
-        npcRuntController.navAgent.speed = curSpeed;
-        npcRuntController.navAgent.SetDestination(destPos);
+        npcRuntController.NavAgent.speed = curSpeed;
+        npcRuntController.NavAgent.SetDestination(destPos);
     }
 
 }
