@@ -10,7 +10,7 @@ public class RuntFleeState : FSMState
     NPCRuntController npcRuntController;                            //NPCRuntController script to object
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
-    
+
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntFleeState(Transform[] wp, NPCRuntController npcRunt)
@@ -103,8 +103,9 @@ public class RuntFleeState : FSMState
     {
         if (IsInCurrentRange(npcRuntController.transform, destPos, NPCRuntController.SLOT_DIST))
         {
+            Transform runtTransform = npcRuntController.transform;
             Vector3 closestplayer = npcRuntController.GetClosestPlayer();
-            
+
             float distance = 0.0f;
             Vector3 hidePos = Vector3.zero;
 

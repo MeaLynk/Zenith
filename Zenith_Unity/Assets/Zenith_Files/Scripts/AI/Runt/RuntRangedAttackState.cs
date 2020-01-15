@@ -13,10 +13,6 @@ public class RuntRangedAttackState : FSMState
 
     //EnemyTankShooting enemyTankShooting;            //EnemyTankShooting script attached tothe objects
 
-    //timers intended to track when the tank controller should update its state and variables
-    float elapsedTime;
-    float intervalTime;
-
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntRangedAttackState(Transform[] wp, NPCRuntController npcRunt)
@@ -35,9 +31,7 @@ public class RuntRangedAttackState : FSMState
         //assign speed, waypoints, the stateID, and the timers
         waypoints = wp;
         stateID = FSMStateID.RangedAttacking;
-        elapsedTime = 0.0f;
-        intervalTime = 1.5f;
-        curRotSpeed = 1.0f;
+        curRotSpeed = 2.0f;
         curSpeed = 0.0f;
     }
 
@@ -45,7 +39,7 @@ public class RuntRangedAttackState : FSMState
     // EnterStateInit() is used to initialize the runt when they enter the ranged attack state
     public override void EnterStateInit()
     {
-        elapsedTime = 0.0f;
+
     }
 
     //----------------------------------------------------------------------------------------------
@@ -111,10 +105,9 @@ public class RuntRangedAttackState : FSMState
     public override void Act()
     {
         //adjust the runts's rotation and fire 
-
         Transform runtTransform = npcRuntController.transform;
         Vector3 closestplayer = npcRuntController.GetClosestPlayer();
-        
+
         Quaternion leftQuatMax = Quaternion.AngleAxis(-45, new Vector3(0, 1, 0));
         Quaternion rightQuatMax = Quaternion.AngleAxis(45, new Vector3(0, 1, 0));
 
@@ -123,7 +116,6 @@ public class RuntRangedAttackState : FSMState
 
         Vector3 targetDir = closestplayer - runtTransform.position;
         Quaternion targetRot = Quaternion.LookRotation(targetDir);
-        float angle = Vector3.Angle(targetDir, runtTransform.forward);
 
         // Rotate the enemy
         runtTransform.rotation = Quaternion.Slerp(runtTransform.rotation, targetRot, Time.deltaTime * curRotSpeed);

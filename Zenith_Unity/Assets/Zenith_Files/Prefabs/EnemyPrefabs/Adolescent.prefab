@@ -299,7 +299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce498dab14bc64884fe018869e5606, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coverPositionsSlotManager: {fileID: 0}
   navAgent: {fileID: 6058758850748076834}
   health: {fileID: 0}
   rigBody: {fileID: 0}
@@ -357,7 +356,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6058758850748076837}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 2.1
+  m_Radius: 2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -367,7 +366,7 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 2.6
-  m_BaseOffset: 0
+  m_BaseOffset: 0.2
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
 --- !u!1 &6883918813689370284

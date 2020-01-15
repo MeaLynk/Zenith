@@ -11,8 +11,8 @@ public class RuntMeleeAttackState : FSMState
     NPCRuntController npcRuntController;                            //NPCRuntController script to object
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
-    //EnemyTankShooting enemyTankShooting;                          //EnemyTankShooting script attached to the objects
-        
+    RuntAttack runtAttack;                                          //RuntAttack script attached to the objects
+
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntMeleeAttackState(Transform[] wp, NPCRuntController npcRunt)
@@ -26,7 +26,7 @@ public class RuntMeleeAttackState : FSMState
             playerHealths.Add(GameManager.instance.Players[i].GetComponent<Health>());
         }
 
-        //enemyTankShooting = npcRuntController.GetComponent<EnemyTankShooting>();
+        runtAttack = npcRunt.GetComponent<RuntAttack>();
 
         //assign speed, waypoints, the stateID, and the timers
         waypoints = wp;
@@ -81,23 +81,19 @@ public class RuntMeleeAttackState : FSMState
 
         if (IsInCurrentRange(runtTransform, closestplayer, NPCRuntController.ATTACK_DIST))
         {
-            // wait to shoot
-            //if (npcTankController.receivedAttackCommand)
-            //   enemyTankShooting.Firing = true;
-            //else
-            // enemyTankShooting.Firing = false;
+            runtAttack.Attacking = true;
 
         }
         else if (IsInCurrentRange(runtTransform, closestplayer, NPCRuntController.CHASE_DIST))
         {
             //if the player's distance is in range of the chase distance, stop firing and chase 
             //the player
-            // enemyTankShooting.Firing = false;
+            runtAttack.Attacking = false;
             npcRuntController.PerformTransition(Transition.SawPlayer);
         }
         else
         {
-            //enemyTankShooting.Firing = false;
+            runtAttack.Attacking = false;
             npcRuntController.PerformTransition(Transition.LostPlayer);
         }
 
@@ -107,8 +103,7 @@ public class RuntMeleeAttackState : FSMState
     // Act() is used to tell the runt what to do when it is in the melee attack state
     public override void Act()
     {
-
-        Transform npc = npcRuntController.transform;
+        Transform runtTransform = npcRuntController.transform;
         Vector3 closestplayer = npcRuntController.GetClosestPlayer();
 
         Quaternion leftQuatMax = Quaternion.AngleAxis(-45, new Vector3(0, 1, 0));
@@ -117,12 +112,12 @@ public class RuntMeleeAttackState : FSMState
         // UsefullFunctions.DebugRay(npc.position, leftQuatMax * npc.forward * 5, Color.green);
         // UsefullFunctions.DebugRay(npc.position, rightQuatMax * npc.forward * 5, Color.red);
 
-        Vector3 targetDir = closestplayer - npc.position;
+        Vector3 targetDir = closestplayer - runtTransform.position;
         Quaternion targetRot = Quaternion.LookRotation(targetDir);
-        float angle = Vector3.Angle(targetDir, npc.forward);
+        float angle = Vector3.Angle(targetDir, runtTransform.forward);
 
         // Rotate the enemy
-        npc.rotation = Quaternion.Slerp(npc.rotation, targetRot, Time.deltaTime * curRotSpeed);
+        runtTransform.rotation = Quaternion.Slerp(runtTransform.rotation, targetRot, Time.deltaTime * curRotSpeed);
 
         npcRuntController.NavAgent.speed = curSpeed;
 

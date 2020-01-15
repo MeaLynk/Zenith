@@ -4,11 +4,10 @@ using UnityEngine;
 
 //---------------------------------------------------------------------------------------------------------
 // RuntIdleState defines what the runts will do when they are idling
-
 public class RuntIdleState : FSMState
 {
-    NPCRuntController npcRuntController;            //NPCRuntController script to object
-    Health health;                                  //Health script attached to object
+    NPCRuntController npcRuntController;            //NPCRuntController script to runt
+    Health health;                                  //Health script attached to runt
 
     //----------------------------------------------------------------------------------------------
     // Constructor
@@ -17,7 +16,7 @@ public class RuntIdleState : FSMState
         //assign the object's scripts
         npcRuntController = npcRunt;
         health = npcRunt.Health;
-        
+
         //assign speed, waypoints and the stateID
         waypoints = wp;
         stateID = FSMStateID.Idle;

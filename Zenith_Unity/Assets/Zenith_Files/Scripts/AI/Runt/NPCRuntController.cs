@@ -15,14 +15,13 @@ public class NPCRuntController : AdvancedFSM
     public static int RANGED_ATTACK_DIST = 12;
     public static int CHASE_DIST = 10;
     public static int FLEE_DIST = 6;
+    public int PlayerTarget { get; set; }
 
     public NavMeshAgent NavAgent { get; set; }
     public Health Health { get; set; }
     public Rigidbody RigidBody { get; set; }
     [HideInInspector] public Transform[] pointList;
     [HideInInspector] public Transform[] fleePoints;
-
-    public int PlayerTarget { get; set; }
 
     public Transform GetPlayerTransform(int index)
     {
@@ -182,16 +181,16 @@ public class NPCRuntController : AdvancedFSM
 
         for (int i = 0; i < GameManager.instance.Players.Count; i++)
         {
-            float currentDist = Vector3.Distance(this.transform.position, GetPlayerTransform(i).position);
-            if (currentDist < closestPlayerDist)
+            float dist = Vector3.Distance(this.transform.position, GetPlayerTransform(i).position);
+            if (dist < closestPlayerDist)
             {
-                closestPlayerDist = currentDist;
+                closestPlayerDist = dist;
                 closestPlayerIndex = i;
             }
         }
         PlayerTarget = closestPlayerIndex;
 
-        return GetPlayerTransform(closestPlayerIndex).position;
-
+        return GameManager.instance.Players[closestPlayerIndex].transform.position;
     }
+
 }
