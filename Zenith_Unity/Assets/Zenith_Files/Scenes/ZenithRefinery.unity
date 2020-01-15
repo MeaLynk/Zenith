@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 352871}
   - component: {fileID: 352870}
   - component: {fileID: 352869}
+  - component: {fileID: 352874}
   m_Layer: 0
   m_Name: Grabbable Object (15)
   m_TagString: Grabbable Object
@@ -230,6 +231,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &352874
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352868}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &58749737
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,6 +304,7 @@ GameObject:
   - component: {fileID: 59474858}
   - component: {fileID: 59474857}
   - component: {fileID: 59474856}
+  - component: {fileID: 59474861}
   m_Layer: 0
   m_Name: Grabbable Object (25)
   m_TagString: Grabbable Object
@@ -383,6 +401,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &59474861
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 59474855}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &69010616
 GameObject:
   m_ObjectHideFlags: 0
@@ -948,6 +982,7 @@ GameObject:
   - component: {fileID: 194938593}
   - component: {fileID: 194938592}
   - component: {fileID: 194938591}
+  - component: {fileID: 194938596}
   m_Layer: 0
   m_Name: Grabbable Object (46)
   m_TagString: Grabbable Object
@@ -1044,6 +1079,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &194938596
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194938590}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &222960170
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1349,7 @@ GameObject:
   - component: {fileID: 246922515}
   - component: {fileID: 246922514}
   - component: {fileID: 246922513}
+  - component: {fileID: 246922518}
   m_Layer: 0
   m_Name: Grabbable Object (17)
   m_TagString: Grabbable Object
@@ -1394,6 +1446,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &246922518
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246922512}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &250719638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,6 +1475,7 @@ GameObject:
   - component: {fileID: 250719641}
   - component: {fileID: 250719640}
   - component: {fileID: 250719639}
+  - component: {fileID: 250719644}
   m_Layer: 0
   m_Name: Grabbable Object (13)
   m_TagString: Grabbable Object
@@ -1503,6 +1572,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &250719644
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250719638}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &252539897
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,6 +1786,7 @@ GameObject:
   - component: {fileID: 276188522}
   - component: {fileID: 276188521}
   - component: {fileID: 276188520}
+  - component: {fileID: 276188525}
   m_Layer: 0
   m_Name: Grabbable Object (38)
   m_TagString: Grabbable Object
@@ -1797,6 +1883,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &276188525
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276188519}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &280850172
 GameObject:
   m_ObjectHideFlags: 0
@@ -1885,11 +1987,6 @@ Transform:
   - {fileID: 111342318}
   - {fileID: 1510063268}
   - {fileID: 2050820374}
-  - {fileID: 735573602}
-  - {fileID: 1592240410}
-  - {fileID: 553132095}
-  - {fileID: 2035034607}
-  - {fileID: 1742006873}
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2349,6 +2446,7 @@ GameObject:
   - component: {fileID: 377558371}
   - component: {fileID: 377558370}
   - component: {fileID: 377558369}
+  - component: {fileID: 377558374}
   m_Layer: 0
   m_Name: Grabbable Object (52)
   m_TagString: Grabbable Object
@@ -2445,6 +2543,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 51
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &377558374
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 377558368}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &388123612
 GameObject:
   m_ObjectHideFlags: 0
@@ -2660,6 +2774,7 @@ GameObject:
   - component: {fileID: 399369467}
   - component: {fileID: 399369466}
   - component: {fileID: 399369465}
+  - component: {fileID: 399369470}
   m_Layer: 0
   m_Name: Grabbable Object (28)
   m_TagString: Grabbable Object
@@ -2756,6 +2871,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &399369470
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399369464}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &415546585
 GameObject:
   m_ObjectHideFlags: 0
@@ -2799,6 +2930,7 @@ GameObject:
   - component: {fileID: 420953061}
   - component: {fileID: 420953060}
   - component: {fileID: 420953059}
+  - component: {fileID: 420953064}
   m_Layer: 0
   m_Name: Grabbable Object (49)
   m_TagString: Grabbable Object
@@ -2895,6 +3027,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &420953064
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420953058}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &422460095
 GameObject:
   m_ObjectHideFlags: 0
@@ -3000,6 +3148,7 @@ GameObject:
   - component: {fileID: 438358233}
   - component: {fileID: 438358232}
   - component: {fileID: 438358231}
+  - component: {fileID: 438358236}
   m_Layer: 0
   m_Name: Grabbable Object (33)
   m_TagString: Grabbable Object
@@ -3096,6 +3245,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &438358236
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 438358230}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &440673966
 GameObject:
   m_ObjectHideFlags: 0
@@ -3139,6 +3304,7 @@ GameObject:
   - component: {fileID: 446483387}
   - component: {fileID: 446483386}
   - component: {fileID: 446483385}
+  - component: {fileID: 446483390}
   m_Layer: 0
   m_Name: Grabbable Object (30)
   m_TagString: Grabbable Object
@@ -3235,6 +3401,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &446483390
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446483384}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &448080335
 GameObject:
   m_ObjectHideFlags: 0
@@ -3462,6 +3644,7 @@ GameObject:
   - component: {fileID: 464853944}
   - component: {fileID: 464853943}
   - component: {fileID: 464853942}
+  - component: {fileID: 464853947}
   m_Layer: 0
   m_Name: Grabbable Object (40)
   m_TagString: Grabbable Object
@@ -3558,6 +3741,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &464853947
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464853941}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &467392317
 GameObject:
   m_ObjectHideFlags: 0
@@ -3783,6 +3982,7 @@ GameObject:
   - component: {fileID: 503146148}
   - component: {fileID: 503146147}
   - component: {fileID: 503146146}
+  - component: {fileID: 503146151}
   m_Layer: 0
   m_Name: Grabbable Object (57)
   m_TagString: Grabbable Object
@@ -3879,6 +4079,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 56
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &503146151
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503146145}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &505914094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3922,6 +4138,7 @@ GameObject:
   - component: {fileID: 520497709}
   - component: {fileID: 520497708}
   - component: {fileID: 520497707}
+  - component: {fileID: 520497712}
   m_Layer: 0
   m_Name: Grabbable Object (35)
   m_TagString: Grabbable Object
@@ -4018,6 +4235,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &520497712
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 520497706}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &523946609
 GameObject:
   m_ObjectHideFlags: 0
@@ -4262,6 +4495,7 @@ GameObject:
   - component: {fileID: 536636913}
   - component: {fileID: 536636912}
   - component: {fileID: 536636911}
+  - component: {fileID: 536636916}
   m_Layer: 0
   m_Name: Grabbable Object (12)
   m_TagString: Grabbable Object
@@ -4358,6 +4592,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &536636916
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 536636910}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &537546407
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,6 +4743,7 @@ GameObject:
   - component: {fileID: 551776009}
   - component: {fileID: 551776008}
   - component: {fileID: 551776007}
+  - component: {fileID: 551776012}
   m_Layer: 0
   m_Name: Grabbable Object (10)
   m_TagString: Grabbable Object
@@ -4589,36 +4840,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
---- !u!1 &553132094
-GameObject:
+--- !u!208 &551776012
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 553132095}
-  m_Layer: 0
-  m_Name: WayPoint (34)
-  m_TagString: WayPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &553132095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 553132094}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.38, y: 3.25, z: 23.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 283320678}
-  m_RootOrder: 33
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 551776006}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &565922483
 GameObject:
   m_ObjectHideFlags: 0
@@ -4956,6 +5193,7 @@ GameObject:
   - component: {fileID: 637919603}
   - component: {fileID: 637919602}
   - component: {fileID: 637919601}
+  - component: {fileID: 637919606}
   m_Layer: 0
   m_Name: Grabbable Object (48)
   m_TagString: Grabbable Object
@@ -5052,6 +5290,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &637919606
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637919600}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &647656980
 GameObject:
   m_ObjectHideFlags: 0
@@ -5356,6 +5610,7 @@ GameObject:
   - component: {fileID: 671740949}
   - component: {fileID: 671740948}
   - component: {fileID: 671740947}
+  - component: {fileID: 671740952}
   m_Layer: 0
   m_Name: Grabbable Object (16)
   m_TagString: Grabbable Object
@@ -5452,6 +5707,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &671740952
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 671740946}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &684491938
 GameObject:
   m_ObjectHideFlags: 0
@@ -5680,6 +5951,7 @@ GameObject:
   - component: {fileID: 695519292}
   - component: {fileID: 695519291}
   - component: {fileID: 695519290}
+  - component: {fileID: 695519295}
   m_Layer: 0
   m_Name: Grabbable Object (18)
   m_TagString: Grabbable Object
@@ -5776,6 +6048,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &695519295
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 695519289}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -5880,6 +6168,7 @@ GameObject:
   - component: {fileID: 718908157}
   - component: {fileID: 718908156}
   - component: {fileID: 718908155}
+  - component: {fileID: 718908160}
   m_Layer: 0
   m_Name: Grabbable Object (19)
   m_TagString: Grabbable Object
@@ -5976,6 +6265,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 74.998, z: 0}
+--- !u!208 &718908160
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 718908154}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &719472068
 GameObject:
   m_ObjectHideFlags: 0
@@ -6081,6 +6386,7 @@ GameObject:
   - component: {fileID: 727324332}
   - component: {fileID: 727324331}
   - component: {fileID: 727324330}
+  - component: {fileID: 727324335}
   m_Layer: 0
   m_Name: Grabbable Object (55)
   m_TagString: Grabbable Object
@@ -6177,6 +6483,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 54
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &727324335
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 727324329}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &732135454
 GameObject:
   m_ObjectHideFlags: 0
@@ -6269,36 +6591,6 @@ Transform:
   m_Father: {fileID: 989067124}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: -12.529}
---- !u!1 &735573601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 735573602}
-  m_Layer: 0
-  m_Name: WayPoint (32)
-  m_TagString: WayPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &735573602
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735573601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.6, y: 3.25, z: 31.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 283320678}
-  m_RootOrder: 31
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746907844
 GameObject:
   m_ObjectHideFlags: 0
@@ -6405,6 +6697,7 @@ GameObject:
   - component: {fileID: 750986517}
   - component: {fileID: 750986516}
   - component: {fileID: 750986515}
+  - component: {fileID: 750986520}
   m_Layer: 0
   m_Name: Grabbable Object (32)
   m_TagString: Grabbable Object
@@ -6501,6 +6794,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &750986520
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 750986514}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &751763006
 GameObject:
   m_ObjectHideFlags: 0
@@ -6514,6 +6823,7 @@ GameObject:
   - component: {fileID: 751763009}
   - component: {fileID: 751763008}
   - component: {fileID: 751763007}
+  - component: {fileID: 751763012}
   m_Layer: 0
   m_Name: Grabbable Object (2)
   m_TagString: Grabbable Object
@@ -6610,6 +6920,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &751763012
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751763006}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &752713145
 GameObject:
   m_ObjectHideFlags: 0
@@ -6854,6 +7180,7 @@ GameObject:
   - component: {fileID: 789616972}
   - component: {fileID: 789616971}
   - component: {fileID: 789616970}
+  - component: {fileID: 789616975}
   m_Layer: 0
   m_Name: Grabbable Object (56)
   m_TagString: Grabbable Object
@@ -6950,6 +7277,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 55
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &789616975
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 789616969}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &790692651
 GameObject:
   m_ObjectHideFlags: 0
@@ -6963,6 +7306,7 @@ GameObject:
   - component: {fileID: 790692654}
   - component: {fileID: 790692653}
   - component: {fileID: 790692652}
+  - component: {fileID: 790692657}
   m_Layer: 0
   m_Name: Grabbable Object (37)
   m_TagString: Grabbable Object
@@ -7059,6 +7403,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &790692657
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 790692651}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &799155017
 GameObject:
   m_ObjectHideFlags: 0
@@ -7505,6 +7865,7 @@ GameObject:
   - component: {fileID: 833962238}
   - component: {fileID: 833962237}
   - component: {fileID: 833962241}
+  - component: {fileID: 833962242}
   m_Layer: 0
   m_Name: Grabbable Object (59)
   m_TagString: Grabbable Object
@@ -7601,6 +7962,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!208 &833962242
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833962236}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &839692461
 GameObject:
   m_ObjectHideFlags: 0
@@ -8004,6 +8381,7 @@ GameObject:
   - component: {fileID: 898780093}
   - component: {fileID: 898780092}
   - component: {fileID: 898780091}
+  - component: {fileID: 898780096}
   m_Layer: 0
   m_Name: Grabbable Object (53)
   m_TagString: Grabbable Object
@@ -8100,6 +8478,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 52
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &898780096
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898780090}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &918856820
 GameObject:
   m_ObjectHideFlags: 0
@@ -8113,6 +8507,7 @@ GameObject:
   - component: {fileID: 918856823}
   - component: {fileID: 918856822}
   - component: {fileID: 918856821}
+  - component: {fileID: 918856826}
   m_Layer: 0
   m_Name: Grabbable Object (54)
   m_TagString: Grabbable Object
@@ -8209,6 +8604,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 53
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &918856826
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918856820}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &929124171
 GameObject:
   m_ObjectHideFlags: 0
@@ -8911,6 +9322,7 @@ GameObject:
   - component: {fileID: 973430070}
   - component: {fileID: 973430069}
   - component: {fileID: 973430068}
+  - component: {fileID: 973430073}
   m_Layer: 0
   m_Name: Grabbable Object (42)
   m_TagString: Grabbable Object
@@ -9007,6 +9419,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &973430073
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973430067}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &974130695
 GameObject:
   m_ObjectHideFlags: 0
@@ -9943,6 +10371,7 @@ GameObject:
   - component: {fileID: 1122823524}
   - component: {fileID: 1122823523}
   - component: {fileID: 1122823522}
+  - component: {fileID: 1122823527}
   m_Layer: 0
   m_Name: Grabbable Object (36)
   m_TagString: Grabbable Object
@@ -10039,6 +10468,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1122823527
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122823521}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1129974296
 GameObject:
   m_ObjectHideFlags: 0
@@ -10296,6 +10741,7 @@ GameObject:
   - component: {fileID: 1158677462}
   - component: {fileID: 1158677461}
   - component: {fileID: 1158677460}
+  - component: {fileID: 1158677465}
   m_Layer: 0
   m_Name: Grabbable Object (7)
   m_TagString: Grabbable Object
@@ -10392,6 +10838,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1158677465
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158677459}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1164575805
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,6 +10977,7 @@ GameObject:
   - component: {fileID: 1186991757}
   - component: {fileID: 1186991756}
   - component: {fileID: 1186991755}
+  - component: {fileID: 1186991760}
   m_Layer: 0
   m_Name: Grabbable Object (34)
   m_TagString: Grabbable Object
@@ -10611,6 +11074,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1186991760
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186991754}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1193940097
 GameObject:
   m_ObjectHideFlags: 0
@@ -10624,6 +11103,7 @@ GameObject:
   - component: {fileID: 1193940100}
   - component: {fileID: 1193940099}
   - component: {fileID: 1193940098}
+  - component: {fileID: 1193940103}
   m_Layer: 0
   m_Name: Grabbable Object (23)
   m_TagString: Grabbable Object
@@ -10720,6 +11200,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1193940103
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1193940097}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1206773794
 GameObject:
   m_ObjectHideFlags: 0
@@ -10842,6 +11338,7 @@ GameObject:
   - component: {fileID: 1207658261}
   - component: {fileID: 1207658260}
   - component: {fileID: 1207658259}
+  - component: {fileID: 1207658264}
   m_Layer: 0
   m_Name: Grabbable Object (5)
   m_TagString: Grabbable Object
@@ -10938,6 +11435,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1207658264
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207658258}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1208635243
 GameObject:
   m_ObjectHideFlags: 0
@@ -10951,6 +11464,7 @@ GameObject:
   - component: {fileID: 1208635246}
   - component: {fileID: 1208635245}
   - component: {fileID: 1208635244}
+  - component: {fileID: 1208635249}
   m_Layer: 0
   m_Name: Grabbable Object (51)
   m_TagString: Grabbable Object
@@ -11047,6 +11561,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 50
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &1208635249
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1208635243}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1209594746
 GameObject:
   m_ObjectHideFlags: 0
@@ -11120,6 +11650,7 @@ GameObject:
   - component: {fileID: 1226814501}
   - component: {fileID: 1226814500}
   - component: {fileID: 1226814499}
+  - component: {fileID: 1226814504}
   m_Layer: 0
   m_Name: Grabbable Object (1)
   m_TagString: Grabbable Object
@@ -11216,6 +11747,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1226814504
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226814498}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1229958326
 GameObject:
   m_ObjectHideFlags: 0
@@ -11229,6 +11776,7 @@ GameObject:
   - component: {fileID: 1229958329}
   - component: {fileID: 1229958328}
   - component: {fileID: 1229958327}
+  - component: {fileID: 1229958332}
   m_Layer: 0
   m_Name: Grabbable Object (4)
   m_TagString: Grabbable Object
@@ -11325,6 +11873,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1229958332
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229958326}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1230117987
 GameObject:
   m_ObjectHideFlags: 0
@@ -11873,6 +12437,7 @@ GameObject:
   - component: {fileID: 1266904776}
   - component: {fileID: 1266904775}
   - component: {fileID: 1266904774}
+  - component: {fileID: 1266904779}
   m_Layer: 0
   m_Name: Grabbable Object (31)
   m_TagString: Grabbable Object
@@ -11969,6 +12534,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1266904779
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266904773}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1270706469
 GameObject:
   m_ObjectHideFlags: 0
@@ -11982,6 +12563,7 @@ GameObject:
   - component: {fileID: 1270706472}
   - component: {fileID: 1270706471}
   - component: {fileID: 1270706470}
+  - component: {fileID: 1270706475}
   m_Layer: 0
   m_Name: Grabbable Object (22)
   m_TagString: Grabbable Object
@@ -12078,6 +12660,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1270706475
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270706469}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1291223799
 GameObject:
   m_ObjectHideFlags: 0
@@ -12428,6 +13026,7 @@ GameObject:
   - component: {fileID: 1346707608}
   - component: {fileID: 1346707607}
   - component: {fileID: 1346707606}
+  - component: {fileID: 1346707611}
   m_Layer: 0
   m_Name: Grabbable Object (41)
   m_TagString: Grabbable Object
@@ -12524,6 +13123,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &1346707611
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346707605}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1351501051
 GameObject:
   m_ObjectHideFlags: 0
@@ -12537,6 +13152,7 @@ GameObject:
   - component: {fileID: 1351501054}
   - component: {fileID: 1351501053}
   - component: {fileID: 1351501052}
+  - component: {fileID: 1351501057}
   m_Layer: 0
   m_Name: Grabbable Object (29)
   m_TagString: Grabbable Object
@@ -12633,6 +13249,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1351501057
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1351501051}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1354054265
 GameObject:
   m_ObjectHideFlags: 0
@@ -12646,6 +13278,7 @@ GameObject:
   - component: {fileID: 1354054268}
   - component: {fileID: 1354054267}
   - component: {fileID: 1354054266}
+  - component: {fileID: 1354054271}
   m_Layer: 0
   m_Name: Grabbable Object (3)
   m_TagString: Grabbable Object
@@ -12742,6 +13375,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1354054271
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1354054265}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1381609536
 GameObject:
   m_ObjectHideFlags: 0
@@ -13351,6 +14000,7 @@ GameObject:
   - component: {fileID: 1469523126}
   - component: {fileID: 1469523125}
   - component: {fileID: 1469523124}
+  - component: {fileID: 1469523129}
   m_Layer: 0
   m_Name: Grabbable Object (8)
   m_TagString: Grabbable Object
@@ -13447,6 +14097,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1469523129
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1469523123}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1473475112
 GameObject:
   m_ObjectHideFlags: 0
@@ -13460,6 +14126,7 @@ GameObject:
   - component: {fileID: 1473475115}
   - component: {fileID: 1473475114}
   - component: {fileID: 1473475113}
+  - component: {fileID: 1473475118}
   m_Layer: 0
   m_Name: Grabbable Object (9)
   m_TagString: Grabbable Object
@@ -13556,6 +14223,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &1473475118
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473475112}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1492887733
 GameObject:
   m_ObjectHideFlags: 0
@@ -13689,6 +14372,7 @@ GameObject:
   - component: {fileID: 1569875520}
   - component: {fileID: 1569875519}
   - component: {fileID: 1569875518}
+  - component: {fileID: 1569875523}
   m_Layer: 0
   m_Name: Grabbable Object (21)
   m_TagString: Grabbable Object
@@ -13785,6 +14469,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 74.998, z: 0}
+--- !u!208 &1569875523
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569875517}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1577541878
 GameObject:
   m_ObjectHideFlags: 0
@@ -13798,6 +14498,7 @@ GameObject:
   - component: {fileID: 1577541881}
   - component: {fileID: 1577541880}
   - component: {fileID: 1577541879}
+  - component: {fileID: 1577541884}
   m_Layer: 0
   m_Name: Grabbable Object (44)
   m_TagString: Grabbable Object
@@ -13894,6 +14595,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &1577541884
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577541878}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1584334918
 GameObject:
   m_ObjectHideFlags: 0
@@ -13907,6 +14624,7 @@ GameObject:
   - component: {fileID: 1584334921}
   - component: {fileID: 1584334920}
   - component: {fileID: 1584334919}
+  - component: {fileID: 1584334924}
   m_Layer: 0
   m_Name: Grabbable Object (14)
   m_TagString: Grabbable Object
@@ -14003,6 +14721,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1584334924
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584334918}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1585738901
 GameObject:
   m_ObjectHideFlags: 0
@@ -14016,6 +14750,7 @@ GameObject:
   - component: {fileID: 1585738904}
   - component: {fileID: 1585738903}
   - component: {fileID: 1585738902}
+  - component: {fileID: 1585738907}
   m_Layer: 0
   m_Name: Grabbable Object (11)
   m_TagString: Grabbable Object
@@ -14112,36 +14847,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1592240409
-GameObject:
+--- !u!208 &1585738907
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1592240410}
-  m_Layer: 0
-  m_Name: WayPoint (33)
-  m_TagString: WayPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1592240410
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592240409}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.21, y: 3.25, z: 32.69}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 283320678}
-  m_RootOrder: 32
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1585738901}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1603803383
 GameObject:
   m_ObjectHideFlags: 0
@@ -14509,6 +15230,7 @@ GameObject:
   - component: {fileID: 1639951725}
   - component: {fileID: 1639951724}
   - component: {fileID: 1639951723}
+  - component: {fileID: 1639951728}
   m_Layer: 0
   m_Name: Grabbable Object (39)
   m_TagString: Grabbable Object
@@ -14605,6 +15327,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1639951728
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639951722}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1667953977
 GameObject:
   m_ObjectHideFlags: 0
@@ -14977,6 +15715,7 @@ GameObject:
   - component: {fileID: 1730107574}
   - component: {fileID: 1730107573}
   - component: {fileID: 1730107572}
+  - component: {fileID: 1730107577}
   m_Layer: 0
   m_Name: Grabbable Object (47)
   m_TagString: Grabbable Object
@@ -15073,36 +15812,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1742006872
-GameObject:
+--- !u!208 &1730107577
+NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1742006873}
-  m_Layer: 0
-  m_Name: WayPoint (36)
-  m_TagString: WayPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1742006873
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742006872}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 46.06, y: 3.25, z: 25.12}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 283320678}
-  m_RootOrder: 35
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_GameObject: {fileID: 1730107571}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1769411425
 GameObject:
   m_ObjectHideFlags: 0
@@ -15225,6 +15950,7 @@ GameObject:
   - component: {fileID: 1787385095}
   - component: {fileID: 1787385094}
   - component: {fileID: 1787385093}
+  - component: {fileID: 1787385098}
   m_Layer: 0
   m_Name: Grabbable Object (27)
   m_TagString: Grabbable Object
@@ -15321,6 +16047,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1787385098
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787385092}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1789990688
 GameObject:
   m_ObjectHideFlags: 0
@@ -15687,6 +16429,7 @@ GameObject:
   - component: {fileID: 1825110907}
   - component: {fileID: 1825110906}
   - component: {fileID: 1825110905}
+  - component: {fileID: 1825110910}
   m_Layer: 0
   m_Name: Grabbable Object (45)
   m_TagString: Grabbable Object
@@ -15783,6 +16526,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &1825110910
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825110904}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1828801517
 GameObject:
   m_ObjectHideFlags: 0
@@ -15796,6 +16555,7 @@ GameObject:
   - component: {fileID: 1828801520}
   - component: {fileID: 1828801519}
   - component: {fileID: 1828801518}
+  - component: {fileID: 1828801523}
   m_Layer: 0
   m_Name: Grabbable Object (24)
   m_TagString: Grabbable Object
@@ -15892,6 +16652,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &1828801523
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828801517}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1854771153
 GameObject:
   m_ObjectHideFlags: 0
@@ -15935,6 +16711,7 @@ GameObject:
   - component: {fileID: 1857053825}
   - component: {fileID: 1857053824}
   - component: {fileID: 1857053823}
+  - component: {fileID: 1857053828}
   m_Layer: 0
   m_Name: Grabbable Object (58)
   m_TagString: Grabbable Object
@@ -16031,6 +16808,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 57
   m_LocalEulerAnglesHint: {x: 0, y: -104.997, z: 0}
+--- !u!208 &1857053828
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857053822}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1871255226
 GameObject:
   m_ObjectHideFlags: 0
@@ -16243,6 +17036,7 @@ GameObject:
   - component: {fileID: 1908741238}
   - component: {fileID: 1908741237}
   - component: {fileID: 1908741236}
+  - component: {fileID: 1908741241}
   m_Layer: 0
   m_Name: Grabbable Object (20)
   m_TagString: Grabbable Object
@@ -16339,6 +17133,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 74.998, z: 0}
+--- !u!208 &1908741241
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908741235}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &1913395155
 GameObject:
   m_ObjectHideFlags: 0
@@ -17062,6 +17872,7 @@ GameObject:
   - component: {fileID: 2014864569}
   - component: {fileID: 2014864568}
   - component: {fileID: 2014864567}
+  - component: {fileID: 2014864572}
   m_Layer: 0
   m_Name: Grabbable Object (26)
   m_TagString: Grabbable Object
@@ -17158,6 +17969,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2014864572
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014864566}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2017674844
 GameObject:
   m_ObjectHideFlags: 0
@@ -17171,6 +17998,7 @@ GameObject:
   - component: {fileID: 2017674847}
   - component: {fileID: 2017674846}
   - component: {fileID: 2017674845}
+  - component: {fileID: 2017674850}
   m_Layer: 0
   m_Name: Grabbable Object (6)
   m_TagString: Grabbable Object
@@ -17267,6 +18095,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!208 &2017674850
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2017674844}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2029048544
 GameObject:
   m_ObjectHideFlags: 0
@@ -17359,36 +18203,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: -30.000002, y: 90.00001, z: 0}
---- !u!1 &2035034606
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2035034607}
-  m_Layer: 0
-  m_Name: WayPoint (35)
-  m_TagString: WayPoint
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2035034607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2035034606}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 30.73, y: 3.25, z: 28.05}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 283320678}
-  m_RootOrder: 34
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2040288150
 GameObject:
   m_ObjectHideFlags: 0
@@ -17706,6 +18520,7 @@ GameObject:
   - component: {fileID: 2076639362}
   - component: {fileID: 2076639361}
   - component: {fileID: 2076639360}
+  - component: {fileID: 2076639365}
   m_Layer: 0
   m_Name: Grabbable Object (43)
   m_TagString: Grabbable Object
@@ -17802,6 +18617,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &2076639365
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2076639359}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2084291431
 GameObject:
   m_ObjectHideFlags: 0
@@ -18125,6 +18956,7 @@ GameObject:
   - component: {fileID: 2094277630}
   - component: {fileID: 2094277629}
   - component: {fileID: 2094277628}
+  - component: {fileID: 2094277633}
   m_Layer: 0
   m_Name: Grabbable Object (50)
   m_TagString: Grabbable Object
@@ -18221,6 +19053,22 @@ Transform:
   m_Father: {fileID: 232641638}
   m_RootOrder: 49
   m_LocalEulerAnglesHint: {x: 0, y: -45.000004, z: 0}
+--- !u!208 &2094277633
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2094277627}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &2095840997
 GameObject:
   m_ObjectHideFlags: 0
