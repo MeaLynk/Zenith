@@ -19,7 +19,6 @@ public class NPCRuntController : AdvancedFSM
 
     public NavMeshAgent NavAgent { get; set; }
     public Health Health { get; set; }
-    public Rigidbody RigidBody { get; set; }
     [HideInInspector] public Transform[] pointList;
     [HideInInspector] public Transform[] fleePoints;
 
@@ -80,11 +79,6 @@ public class NPCRuntController : AdvancedFSM
         else
             Health = this.gameObject.AddComponent<Health>();
 
-        if (this.GetComponent<Rigidbody>())
-            RigidBody = this.GetComponent<Rigidbody>();
-        else
-            RigidBody = this.gameObject.AddComponent<Rigidbody>();
-        
         PlayerTarget = 0;
 
         // Create the FSM for the runt.
@@ -189,7 +183,7 @@ public class NPCRuntController : AdvancedFSM
             }
         }
         PlayerTarget = closestPlayerIndex;
-       
+
         return GameManager.instance.Players[closestPlayerIndex].transform.position;
     }
 

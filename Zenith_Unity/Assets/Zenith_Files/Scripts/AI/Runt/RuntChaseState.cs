@@ -18,7 +18,7 @@ public class RuntChaseState : FSMState
 
     //current playerSlot index
     int availSlotIndex;
-    
+
     //----------------------------------------------------------------------------------------------
     // Constructor
     public RuntChaseState(Transform[] wp, NPCRuntController npcRunt)
