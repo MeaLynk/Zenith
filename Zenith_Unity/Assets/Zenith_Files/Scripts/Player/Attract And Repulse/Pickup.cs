@@ -8,8 +8,8 @@ public class Pickup : MonoBehaviour
     public Camera playerCamera;
     public GameObject playerGuide;
     public GameObject grabbedItem;
-    public Slider AttractStamina;
-    public Slider RepulseStamina;
+    //public Slider AttractStamina;
+    //public Slider RepulseStamina;
 
     public bool isHolding = false;
     public bool inPos = false;
@@ -27,35 +27,35 @@ public class Pickup : MonoBehaviour
     private Renderer objRender;
     private Collider objCollider;
     private float objectMass = 0;
-    private float aElapsedTime = 0.0f;
-    private float rElapsedTime = 0.0f;
-    private Color aColor;
-    private Color rColor;
+    //private float aElapsedTime = 0.0f;
+    //private float rElapsedTime = 0.0f;
+    //private Color aColor;
+    //private Color rColor;
 
 
     private void Start()
     {
         // reset lastSqrMag
         //lastSqrMag = Mathf.Infinity;
-        Image[] images;
-        images = AttractStamina.gameObject.GetComponentsInChildren<Image>();
-        aColor = images[1].color;
+        //Image[] images;
+        //images = AttractStamina.gameObject.GetComponentsInChildren<Image>();
+        //aColor = images[1].color;
 
-        images = RepulseStamina.gameObject.GetComponentsInChildren<Image>();
-        rColor = images[1].color;
+        //images = RepulseStamina.gameObject.GetComponentsInChildren<Image>();
+        //rColor = images[1].color;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (AttractStamina.value < AttractStamina.maxValue && !isHolding)
-        {
-            aElapsedTime += Time.deltaTime;
-        }
-        if (RepulseStamina.value < RepulseStamina.maxValue)
-        {
-            rElapsedTime += Time.deltaTime;
-        }
+        //if (AttractStamina.value < AttractStamina.maxValue && !isHolding)
+        //{
+        //    aElapsedTime += Time.deltaTime;
+        //}
+        //if (RepulseStamina.value < RepulseStamina.maxValue)
+        //{
+        //    rElapsedTime += Time.deltaTime;
+        //}
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -74,9 +74,9 @@ public class Pickup : MonoBehaviour
                         objectMass = objRigid.mass;
                         objRigid.mass = 1;
 
-                        if (AttractStamina.value - objectMass >= 0)
-                        {
-                            StopCoroutine(refilStam(true));
+                        //if (AttractStamina.value - objectMass >= 0)
+                        //{
+                        //    StopCoroutine(refilStam(true));
                             objRender = grabbedItem.GetComponent<Renderer>();
                             objCollider = grabbedItem.GetComponent<Collider>();
 
@@ -84,21 +84,21 @@ public class Pickup : MonoBehaviour
                             objRigid.useGravity = false;
                             objRender.material.color = new Color(objColor.r, objColor.g, objColor.b, 0.5f);
 
-                            useStamina(true, objectMass);
+                            //useStamina(true, objectMass);
 
                             isHolding = true;
 
-                            aElapsedTime = 0;
-                        }
-                        else
-                        {
-                            objRigid.mass = objectMass;
-                            grabbedItem = null;
-                            objRigid = null;
-                            objectMass = 0;
+                        //    aElapsedTime = 0;
+                        //}
+                        //else
+                        //{
+                        //    objRigid.mass = objectMass;
+                        //    grabbedItem = null;
+                        //    objRigid = null;
+                        //    objectMass = 0;
 
-                            StartCoroutine(flashing(true));
-                        }
+                        //    StartCoroutine(flashing(true));
+                        //}
                     }
                 }
             }
@@ -126,10 +126,10 @@ public class Pickup : MonoBehaviour
 
         if (!isHolding && Input.GetMouseButtonDown(1))
         {
-            if (RepulseStamina.value - 20 >= 0)
-            {
-                StopCoroutine(refilStam(false));
-                useStamina(false, 20);
+            //if (RepulseStamina.value - 20 >= 0)
+            //{
+            //    StopCoroutine(refilStam(false));
+            //    useStamina(false, 20);
 
                 RaycastHit[] raycastHit;
 
@@ -145,12 +145,12 @@ public class Pickup : MonoBehaviour
                     }
                 }
 
-                rElapsedTime = 0;
-            }
-            else
-            {
-                StartCoroutine(flashing(false));
-            }
+            //    rElapsedTime = 0;
+            //}
+            //else
+            //{
+            //    StartCoroutine(flashing(false));
+            //}
         }
 
         //check if holding
@@ -160,10 +160,10 @@ public class Pickup : MonoBehaviour
 
             if (Input.GetMouseButtonDown(1))
             {
-                if (RepulseStamina.value - objectMass >= 0)
-                {
-                    StopCoroutine(refilStam(false));
-                    useStamina(false, objectMass);
+                //if (RepulseStamina.value - objectMass >= 0)
+                //{
+                //    StopCoroutine(refilStam(false));
+                //    useStamina(false, objectMass);
 
                     grabbedItem.transform.SetParent(null);
                     objRigid.AddForce(playerGuide.transform.forward * throwForce * objRigid.mass);
@@ -177,33 +177,33 @@ public class Pickup : MonoBehaviour
                     objRender = null;
                     objCollider = null;
                     objColor = Color.white;
-                    rElapsedTime = 0;
-                }
-                else
-                {
-                    StartCoroutine(flashing(false));
-                }
+                //    rElapsedTime = 0;
+                //}
+                //else
+                //{
+                //    StartCoroutine(flashing(false));
+                //}
             }
         }
 
-        if(!isHolding && aElapsedTime >= 2)
-        {
-            StartCoroutine(refilStam(true));
-            if(AttractStamina.value == AttractStamina.maxValue)
-            {
-                aElapsedTime = 0;
-                StopCoroutine(refilStam(true));
-            }
-        }
-        if(rElapsedTime >= 2)
-        {
-            StartCoroutine(refilStam(false));
-            if (RepulseStamina.value == RepulseStamina.maxValue)
-            {
-                rElapsedTime = 0;
-                StopCoroutine(refilStam(false));
-            }
-        }
+        //if(!isHolding && aElapsedTime >= 2)
+        //{
+        //    StartCoroutine(refilStam(true));
+        //    if(AttractStamina.value == AttractStamina.maxValue)
+        //    {
+        //        aElapsedTime = 0;
+        //        StopCoroutine(refilStam(true));
+        //    }
+        //}
+        //if(rElapsedTime >= 2)
+        //{
+        //    StartCoroutine(refilStam(false));
+        //    if (RepulseStamina.value == RepulseStamina.maxValue)
+        //    {
+        //        rElapsedTime = 0;
+        //        StopCoroutine(refilStam(false));
+        //    }
+        //}
     }
 
     void pull()
@@ -230,17 +230,18 @@ public class Pickup : MonoBehaviour
         ////update the lastSqrMag
         //lastSqrMag = sqrMag;
 
-        if (!checkIfInPos())
+        //if (!checkIfInPos())
         {
-            Vector3 dir = (playerGuide.transform.position - grabbedItem.transform.position).normalized * AttactSpeed;
+            Vector3 dir = (playerGuide.transform.position - grabbedItem.transform.position) * AttactSpeed;
 
             objRigid.velocity = dir;
-        }
-        else if (checkIfInPos())
-        {
-            objRigid.velocity = Vector3.zero;
             objRigid.angularVelocity = Vector3.zero;
         }
+        //else if (checkIfInPos())
+        //{
+        //    objRigid.velocity = Vector3.zero;
+        //    objRigid.angularVelocity = Vector3.zero;
+        //}
     }
 
     bool checkIfInPos()
@@ -257,77 +258,77 @@ public class Pickup : MonoBehaviour
         return inPos;
     }
 
-    void useStamina(bool attractRepulse, float staminaUse) //Attract = True, Repulse = False
-    {
-        if(attractRepulse)
-        {
-            AttractStamina.value -= staminaUse;
-        }
-        else
-        {
-            RepulseStamina.value -= staminaUse;
-        }
-    }
+    //void useStamina(bool attractRepulse, float staminaUse) //Attract = True, Repulse = False
+    //{
+    //    if(attractRepulse)
+    //    {
+    //        AttractStamina.value -= staminaUse;
+    //    }
+    //    else
+    //    {
+    //        RepulseStamina.value -= staminaUse;
+    //    }
+    //}
 
-    IEnumerator flashing(bool attractRepulse) //Attract = True, Repulse = False
-    {
-        Image[] images;
-        int flashes = 0;
-        Color color;
+    //IEnumerator flashing(bool attractRepulse) //Attract = True, Repulse = False
+    //{
+    //    Image[] images;
+    //    int flashes = 0;
+    //    Color color;
 
-        if (attractRepulse)
-        {
-            images = AttractStamina.gameObject.GetComponentsInChildren<Image>();
-            color = aColor;
-        }
+    //    if (attractRepulse)
+    //    {
+    //        images = AttractStamina.gameObject.GetComponentsInChildren<Image>();
+    //        color = aColor;
+    //    }
 
-        else
-        {
-            images = RepulseStamina.gameObject.GetComponentsInChildren<Image>();
-            color = rColor;
-        }
+    //    else
+    //    {
+    //        images = RepulseStamina.gameObject.GetComponentsInChildren<Image>();
+    //        color = rColor;
+    //    }
 
-        while (flashes < 3)
-        {
-            for (int i = 1; i < images.Length; i++)
-            {
-                images[i].color = Color.red;
-            }
-            yield return new WaitForSeconds(0.2f);
-            for (int i = 1; i < images.Length; i++)
-            {
-                images[i].color = color;
-            }
-            yield return new WaitForSeconds(0.2f);
-            flashes++;
-        }
-    }
+    //    while (flashes < 3)
+    //    {
+    //        for (int i = 1; i < images.Length; i++)
+    //        {
+    //            images[i].color = Color.red;
+    //        }
+    //        yield return new WaitForSeconds(0.2f);
+    //        for (int i = 1; i < images.Length; i++)
+    //        {
+    //            images[i].color = color;
+    //        }
+    //        yield return new WaitForSeconds(0.2f);
+    //        flashes++;
+    //    }
+    //}
 
-    IEnumerator refilStam(bool attractRepulse) //Attract = True, Repulse = False
-    {
-        if(attractRepulse)
-        {
-            while(AttractStamina.value < AttractStamina.maxValue)
-            {
-                AttractStamina.value += 5;
-                if(AttractStamina.value > AttractStamina.maxValue)
-                {
-                    AttractStamina.value = AttractStamina.maxValue;
-                }
-                yield return new WaitForSeconds(0.2f);
-            }
-        }
-        else
-        {
-            while (RepulseStamina.value < RepulseStamina.maxValue)
-            {
-                RepulseStamina.value += 5;
-                if (RepulseStamina.value > RepulseStamina.maxValue)
-                {
-                    RepulseStamina.value = RepulseStamina.maxValue;
-                }
-                yield return new WaitForSeconds(0.2f);
-            }
-        }
-    }
+    //IEnumerator refilStam(bool attractRepulse) //Attract = True, Repulse = False
+    //{
+    //    if(attractRepulse)
+    //    {
+    //        while(AttractStamina.value < AttractStamina.maxValue)
+    //        {
+    //            AttractStamina.value += 5;
+    //            if(AttractStamina.value > AttractStamina.maxValue)
+    //            {
+    //                AttractStamina.value = AttractStamina.maxValue;
+    //            }
+    //            yield return new WaitForSeconds(0.2f);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        while (RepulseStamina.value < RepulseStamina.maxValue)
+    //        {
+    //            RepulseStamina.value += 5;
+    //            if (RepulseStamina.value > RepulseStamina.maxValue)
+    //            {
+    //                RepulseStamina.value = RepulseStamina.maxValue;
+    //            }
+    //            yield return new WaitForSeconds(0.2f);
+    //        }
+    //    }
+    //}
 }

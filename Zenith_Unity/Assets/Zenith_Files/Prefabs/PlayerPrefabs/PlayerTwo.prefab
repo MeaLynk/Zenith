@@ -409,7 +409,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7225748942539960559}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a66caff5e17022b4f866b91d4f87fff6, type: 3}
   m_Name: 
@@ -417,15 +417,13 @@ MonoBehaviour:
   playerCamera: {fileID: 7225748942744479244}
   playerGuide: {fileID: 3323570439988322005}
   grabbedItem: {fileID: 0}
-  AttractStamina: {fileID: 0}
-  RepulseStamina: {fileID: 0}
   isHolding: 0
   inPos: 0
-  grabDistance: 10
-  pushDistance: 8
-  AttactSpeed: 7
+  grabDistance: 25
+  pushDistance: 5
+  AttactSpeed: 65
   throwForce: 3000
-  pushForce: 150
+  pushForce: 50
 --- !u!1 &7225748942744479245
 GameObject:
   m_ObjectHideFlags: 0
