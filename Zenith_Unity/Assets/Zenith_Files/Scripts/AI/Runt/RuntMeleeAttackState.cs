@@ -82,7 +82,6 @@ public class RuntMeleeAttackState : FSMState
         if (IsInCurrentRange(runtTransform, closestplayer, NPCRuntController.ATTACK_DIST))
         {
             runtAttack.Attacking = true;
-
         }
         else if (IsInCurrentRange(runtTransform, closestplayer, NPCRuntController.CHASE_DIST))
         {

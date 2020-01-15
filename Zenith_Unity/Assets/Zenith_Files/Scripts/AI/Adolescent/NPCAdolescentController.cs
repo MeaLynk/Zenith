@@ -10,16 +10,15 @@ using System.Collections.Generic;
 
 public class NPCAdolescentController : AdvancedFSM
 {
-    public static int SLOT_DIST = 2;
-    public static int WAYPOINT_DIST = 5;
+    public static int SLOT_DIST = 3;
+    public static int WAYPOINT_DIST = 3;
     public static int ATTACK_DIST = 3;
     public static int CHASE_DIST = 10;
     public static int FLEE_DIST = 6;
+    public int PlayerTarget { get; set; }
 
-    [HideInInspector] public NavMeshAgent navAgent;
-    [HideInInspector] public Health health;
-    [HideInInspector] public Rigidbody rigBody;
-    [HideInInspector] public bool receivedAttackCommand = false;
+    public NavMeshAgent NavAgent { get; set; }
+    public Health Health { get; set; }
     [HideInInspector] public Transform[] pointList;
     [HideInInspector] public Transform[] fleePoints;
 
@@ -67,12 +66,17 @@ public class NPCAdolescentController : AdvancedFSM
     // Initialize the FSM for the NPC adolescent.
     protected override void Initialize()
     {
-        navAgent = this.GetComponent<NavMeshAgent>();
-        health = this.GetComponent<Health>();
+        if (this.GetComponent<NavMeshAgent>())
+            NavAgent = this.GetComponent<NavMeshAgent>();
+        else
+            NavAgent = this.gameObject.AddComponent<NavMeshAgent>();
 
-        rigBody = GetComponent<Rigidbody>();
+        if (this.GetComponent<Health>())
+            Health = this.GetComponent<Health>();
+        else
+            Health = this.gameObject.AddComponent<Health>();
 
-        receivedAttackCommand = false;
+        PlayerTarget = 0;
 
         // Create the FSM for the adolescent.
         ConstructFSM();
@@ -96,10 +100,6 @@ public class NPCAdolescentController : AdvancedFSM
 
     private void ConstructFSM()
     {
-        //
-        // TODO: Build your FSM with states here...
-        //
-
         AdolescentChaseState chase = new AdolescentChaseState(pointList, this);
         chase.AddTransition(Transition.NoHealth, FSMStateID.Dead);
         chase.AddTransition(Transition.PlayerDead, FSMStateID.Idle);
@@ -138,34 +138,40 @@ public class NPCAdolescentController : AdvancedFSM
 
     }
 
-    private void OnReceiveAttackCommand()
-    {
-        if (CurrentStateID == FSMStateID.MeleeAttacking)
-        {
-            receivedAttackCommand = true;
-        }
-    }
-
-    private void OnReceiveStopAttackCommand()
-    {
-        receivedAttackCommand = false;
-    }
-
     private void OnEnable()
     {
         CurrentStateID = FSMStateID.Idle;
 
-        if (navAgent)
+        if (NavAgent)
         {
-            navAgent.enabled = true;
-            navAgent.isStopped = false;
+            NavAgent.enabled = true;
+            NavAgent.isStopped = false;
         }
     }
     private void OnDisable()
     {
-        if (navAgent && navAgent.isActiveAndEnabled)
+        if (NavAgent && NavAgent.isActiveAndEnabled)
         {
-            navAgent.isStopped = true;
+            NavAgent.isStopped = true;
         }
     }
+    public Vector3 GetClosestPlayer()
+    {
+        int closestPlayerIndex = 0;
+        float closestPlayerDist = float.PositiveInfinity;
+
+        for (int i = 0; i < GameManager.instance.Players.Count; i++)
+        {
+            float dist = Vector3.Distance(this.transform.position, GetPlayerTransform(i).position);
+            if (dist < closestPlayerDist)
+            {
+                closestPlayerDist = dist;
+                closestPlayerIndex = i;
+            }
+        }
+        PlayerTarget = closestPlayerIndex;
+
+        return GameManager.instance.Players[closestPlayerIndex].transform.position;
+    }
+
 }

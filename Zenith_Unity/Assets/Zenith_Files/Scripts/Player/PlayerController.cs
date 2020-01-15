@@ -51,7 +51,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
-        isWalking = true;
+        isWalking = false;
         jump = false;
         jumping = false;
         previouslyGrounded = true;

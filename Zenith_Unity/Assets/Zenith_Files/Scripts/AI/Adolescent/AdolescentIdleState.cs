@@ -9,23 +9,15 @@ public class AdolescentIdleState : FSMState
 {
     NPCAdolescentController npcAdolescentController;            //NPCAdolescentController script to object
     Health health;                                              //Health script attached to object
-
-    //the distance from the player to the adolescent
-    List<float> playerDistances = new List<float>();
-    
+        
     //----------------------------------------------------------------------------------------------
     // Constructor
     public AdolescentIdleState(Transform[] wp, NPCAdolescentController npcAdolescent)
     {
         //assign the object's scripts
         npcAdolescentController = npcAdolescent;
-        health = npcAdolescent.health;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances.Add(Vector3.Distance(npcAdolescent.transform.position, GameManager.instance.Players[i].transform.position));
-        }
-
+        health = npcAdolescent.Health;
+        
         //assign speed, waypoints and the stateID
         waypoints = wp;
         stateID = FSMStateID.Idle;
@@ -46,22 +38,7 @@ public class AdolescentIdleState : FSMState
     public override void Reason()
     {
         Transform adolescentTransform = npcAdolescentController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = 0;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(adolescentTransform.position, npcAdolescentController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcAdolescentController.GetPlayerTransform(closerPlayer).position;
+        Vector3 closestplayer = npcAdolescentController.GetClosestPlayer();
 
         if (health && health.IsDead())
         {
@@ -88,7 +65,7 @@ public class AdolescentIdleState : FSMState
     public override void Act()
     {
         UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
-        npcAdolescentController.navAgent.CalculatePath(destPos, path);
+        npcAdolescentController.NavAgent.CalculatePath(destPos, path);
 
         if (path.status != UnityEngine.AI.NavMeshPathStatus.PathComplete)
         {
@@ -104,8 +81,8 @@ public class AdolescentIdleState : FSMState
         npcAdolescentController.transform.rotation = Quaternion.Slerp(npcAdolescentController.transform.rotation, targetRotation,
                                                                 curRotSpeed * Time.deltaTime);
 
-        npcAdolescentController.navAgent.speed = curSpeed;
-        npcAdolescentController.navAgent.SetDestination(destPos);
+        npcAdolescentController.NavAgent.speed = curSpeed;
+        npcAdolescentController.NavAgent.SetDestination(destPos);
     }
 
 }

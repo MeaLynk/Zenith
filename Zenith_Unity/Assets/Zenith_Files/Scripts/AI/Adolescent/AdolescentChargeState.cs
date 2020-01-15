@@ -18,23 +18,19 @@ public class AdolescentChargeState : FSMState
 
     //current playerSlot index
     int availSlotIndex;
-
-    //the distance from the player to the adolescent
-    List<float> playerDistances = new List<float>();
-
+    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public AdolescentChargeState(Transform[] wp, NPCAdolescentController npcAdolescent)
     {
         //assign the object's scripts
         npcAdolescentController = npcAdolescent;
-        health = npcAdolescent.health;
+        health = npcAdolescent.Health;
         playerHealths = new List<Health>();
 
         for (int i = 0; i < GameManager.instance.Players.Count; i++)
         {
             playerHealths.Add(GameManager.instance.Players[i].GetComponent<Health>());
-            playerDistances.Add(Vector3.Distance(npcAdolescent.transform.position, GameManager.instance.Players[i].transform.position));
         }
 
         //assign speed, waypoints, the stateID, and the timers
@@ -52,20 +48,9 @@ public class AdolescentChargeState : FSMState
     public override void EnterStateInit()
     {
         // get a slot position
+        Vector3 closestplayer = npcAdolescentController.GetClosestPlayer();
 
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestPlayerSlots = npcAdolescentController.GetPlayerSlotManager(closerPlayer);
+        closestPlayerSlots = npcAdolescentController.GetPlayerSlotManager(npcAdolescentController.PlayerTarget);
         closestPlayerSlots.ClearSlots(npcAdolescentController.gameObject);
         availSlotIndex = closestPlayerSlots.ReserveSlotAroundObject(npcAdolescentController.gameObject);
 
@@ -77,7 +62,7 @@ public class AdolescentChargeState : FSMState
         else
         {
             //otherwise, assign the destPos to be the player's position
-            destPos = npcAdolescentController.GetPlayerTransform(closerPlayer).position;
+            destPos = closestplayer;
         }
 
         elapsedTime = 0.0f;
@@ -89,23 +74,9 @@ public class AdolescentChargeState : FSMState
     public override void Reason()
     {
         Transform adolescentTransform = npcAdolescentController.transform;
-        Vector3 closestplayer;
+        Vector3 closestplayer = npcAdolescentController.GetClosestPlayer();
 
-        int closerPlayer = 0;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(adolescentTransform.position, npcAdolescentController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcAdolescentController.GetPlayerTransform(closerPlayer).position;
-        closestPlayerSlots = npcAdolescentController.GetPlayerSlotManager(closerPlayer);
+        closestPlayerSlots = npcAdolescentController.GetPlayerSlotManager(npcAdolescentController.PlayerTarget);
 
         if (health && health.IsDead())
         {
@@ -151,7 +122,7 @@ public class AdolescentChargeState : FSMState
             }
             else
             {
-                destPos = npcAdolescentController.GetPlayerTransform(closerPlayer).position;
+                destPos = closestplayer;
             }
         }
 
@@ -181,8 +152,8 @@ public class AdolescentChargeState : FSMState
         npcAdolescentController.transform.rotation = Quaternion.Slerp(npcAdolescentController.transform.rotation, targetRotation,
                                                                 curRotSpeed * Time.deltaTime);
 
-        npcAdolescentController.navAgent.speed = curSpeed;
-        npcAdolescentController.navAgent.SetDestination(destPos);
+        npcAdolescentController.NavAgent.speed = curSpeed;
+        npcAdolescentController.NavAgent.SetDestination(destPos);
     }
 
 }

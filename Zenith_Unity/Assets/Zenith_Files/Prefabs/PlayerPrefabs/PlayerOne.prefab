@@ -294,7 +294,7 @@ MonoBehaviour:
   cameraSensitivity: 300
   cameraClampAngle: 80
   walkSpeed: 5
-  runSpeed: 10
+  runSpeed: 50
   jumpSpeed: 10
   stickToGroundForce: 10
   gravityMultiplier: 2
@@ -352,7 +352,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   useHeadBob: 1
   runstepLengthen: 0.7
-  stepInterval: 5
+  stepInterval: 4
   footstepSounds:
   - {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
   - {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}

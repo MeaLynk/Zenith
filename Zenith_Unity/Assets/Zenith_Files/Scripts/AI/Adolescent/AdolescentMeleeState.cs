@@ -11,26 +11,22 @@ public class AdolescentMeleeAttackState : FSMState
     NPCAdolescentController npcAdolescentController;                //NPCAdolescentController script to object
     Health health;                                                  //Health script attached to object
     List<Health> playerHealths = new List<Health>();                //Health script attached to the players
-    //EnemyTankShooting enemyTankShooting;                          //EnemyTankShooting script attached to the objects
+    AdolescentAttack adolescentAttack;                              //AdolescenetAttack script attached to the objects
 
-    //the distance from the player to the adolescent
-    List<float> playerDistances = new List<float>();
-    
     //----------------------------------------------------------------------------------------------
     // Constructor
     public AdolescentMeleeAttackState(Transform[] wp, NPCAdolescentController npcAdolescent)
     {
         //assign the object's scripts
         npcAdolescentController = npcAdolescent;
-        health = npcAdolescent.health;
+        health = npcAdolescent.Health;
 
         for (int i = 0; i < GameManager.instance.Players.Count; i++)
         {
             playerHealths.Add(GameManager.instance.Players[i].GetComponent<Health>());
-            playerDistances.Add(Vector3.Distance(npcAdolescent.transform.position, GameManager.instance.Players[i].transform.position));
         }
 
-        //enemyTankShooting = npcAdolescentController.GetComponent<EnemyTankShooting>();
+        adolescentAttack = npcAdolescentController.GetComponent<AdolescentAttack>();
 
         //assign speed, waypoints, the stateID, and the timers
         waypoints = wp;
@@ -52,22 +48,7 @@ public class AdolescentMeleeAttackState : FSMState
     public override void Reason()
     {
         Transform adolescentTransform = npcAdolescentController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            playerDistances[i] = Vector3.Distance(adolescentTransform.position, npcAdolescentController.GetPlayerTransform(i).position);
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcAdolescentController.GetPlayerTransform(closerPlayer).position;
+        Vector3 closestplayer = npcAdolescentController.GetClosestPlayer();
 
         if (health && health.IsDead())
         {
@@ -100,23 +81,18 @@ public class AdolescentMeleeAttackState : FSMState
 
         if (IsInCurrentRange(adolescentTransform, closestplayer, NPCAdolescentController.ATTACK_DIST))
         {
-            // wait to shoot
-            //if (npcTankController.receivedAttackCommand)
-            //   enemyTankShooting.Firing = true;
-            //else
-            // enemyTankShooting.Firing = false;
-
+            adolescentAttack.Attacking = true;
         }
         else if (IsInCurrentRange(adolescentTransform, closestplayer, NPCAdolescentController.CHASE_DIST))
         {
             //if the player's distance is in range of the chase distance, stop firing and chase 
             //the player
-            // enemyTankShooting.Firing = false;
+            adolescentAttack.Attacking = false;
             npcAdolescentController.PerformTransition(Transition.SawPlayer);
         }
         else
         {
-            //enemyTankShooting.Firing = false;
+            adolescentAttack.Attacking = false;
             npcAdolescentController.PerformTransition(Transition.LostPlayer);
         }
 
@@ -127,23 +103,8 @@ public class AdolescentMeleeAttackState : FSMState
     public override void Act()
     {
         //adjust the runts's rotation if need be, fire 
-
-        Transform npc = npcAdolescentController.transform;
-        Vector3 closestplayer;
-
-        int closerPlayer = -1;
-        float distance = float.PositiveInfinity;
-
-        for (int i = 0; i < GameManager.instance.Players.Count; i++)
-        {
-            if (playerDistances[i] < distance)
-            {
-                distance = playerDistances[i];
-                closerPlayer = i;
-            }
-        }
-
-        closestplayer = npcAdolescentController.GetPlayerTransform(closerPlayer).position;
+        Transform adolescentTransform = npcAdolescentController.transform;
+        Vector3 closestplayer = npcAdolescentController.GetClosestPlayer();
 
         Quaternion leftQuatMax = Quaternion.AngleAxis(-45, new Vector3(0, 1, 0));
         Quaternion rightQuatMax = Quaternion.AngleAxis(45, new Vector3(0, 1, 0));
@@ -151,14 +112,13 @@ public class AdolescentMeleeAttackState : FSMState
         // UsefullFunctions.DebugRay(npc.position, leftQuatMax * npc.forward * 5, Color.green);
         // UsefullFunctions.DebugRay(npc.position, rightQuatMax * npc.forward * 5, Color.red);
 
-        Vector3 targetDir = closestplayer - npc.position;
+        Vector3 targetDir = closestplayer - adolescentTransform.position;
         Quaternion targetRot = Quaternion.LookRotation(targetDir);
-        float angle = Vector3.Angle(targetDir, npc.forward);
 
         // Rotate the enemy
-        npc.rotation = Quaternion.Slerp(npc.rotation, targetRot, Time.deltaTime * curRotSpeed);
+        adolescentTransform.rotation = Quaternion.Slerp(adolescentTransform.rotation, targetRot, Time.deltaTime * curRotSpeed);
 
-        npcAdolescentController.navAgent.speed = curSpeed;
+        npcAdolescentController.NavAgent.speed = curSpeed;
 
     }
 
