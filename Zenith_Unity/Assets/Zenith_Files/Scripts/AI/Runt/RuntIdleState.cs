@@ -12,7 +12,7 @@ public class RuntIdleState : FSMState
 
     //the distance from the player to the runt
     List<float> playerDistances = new List<float>();
-    
+
     public RuntIdleState(Transform[] wp, NPCRuntController npcRunt)
     {
         //assign the object's scripts
@@ -35,7 +35,9 @@ public class RuntIdleState : FSMState
     // EnterStateInit() is used to initialize the runt when they enter the idle state
     public override void EnterStateInit()
     {
-        destPos = waypoints[Random.Range(0, waypoints.Length)].position;
+        GameObject randomWayPoint = waypoints[Random.Range(0, waypoints.Length)].gameObject;
+        destPos = randomWayPoint.transform.position;
+        npcRuntController.destination = randomWayPoint;
     }
 
     //----------------------------------------------------------------------------------------------
@@ -85,11 +87,22 @@ public class RuntIdleState : FSMState
     // Act() is used to tell the runt what to do when it is in the idle state
     public override void Act()
     {
+        UnityEngine.AI.NavMeshPath path = new UnityEngine.AI.NavMeshPath();
+        npcRuntController.navAgent.CalculatePath(destPos, path);
 
-        if (Vector3.Distance(npcRuntController.transform.position, destPos) < NPCRuntController.SLOT_DIST)
+        if (path.status != UnityEngine.AI.NavMeshPathStatus.PathComplete)
         {
-            Vector3 newDestPos = waypoints[Random.Range(0, waypoints.Length)].position;
-            destPos = newDestPos;
+            GameObject randomWayPoint = waypoints[Random.Range(0, waypoints.Length)].gameObject;
+            
+            destPos = randomWayPoint.transform.position;
+            npcRuntController.destination = randomWayPoint;
+        }
+        else if (Vector3.Distance(npcRuntController.transform.position, destPos) < NPCRuntController.SLOT_DIST)
+        {
+            GameObject randomWayPoint = waypoints[Random.Range(0, waypoints.Length)].gameObject;
+
+            destPos = randomWayPoint.transform.position;
+            npcRuntController.destination = randomWayPoint;
         }
 
         //look towards way point

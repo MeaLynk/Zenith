@@ -618,8 +618,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.6486259, z: 1.0231634}
-  m_Center: {x: 0, y: 0.21234131, z: 0.12991779}
+  m_Size: {x: 1, y: 0.5318271, z: 1.0231634}
+  m_Center: {x: 0, y: 0.27074078, z: 0.1299178}
 --- !u!114 &7636010498215098978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ad0f11dfe81a7d48a96cae2179ac8b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  destination: {fileID: 0}
   navAgent: {fileID: 7636010498215098977}
   health: {fileID: 0}
   rigBody: {fileID: 0}
@@ -644,12 +645,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fleePoints:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -662,7 +664,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7636010498215098976}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.7
+  m_Radius: 0.8
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -673,8 +675,8 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 0.45
   m_BaseOffset: 0.05
-  m_WalkableMask: 3
-  m_ObstacleAvoidanceType: 4
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &7636010498285886645
 GameObject:
   m_ObjectHideFlags: 0

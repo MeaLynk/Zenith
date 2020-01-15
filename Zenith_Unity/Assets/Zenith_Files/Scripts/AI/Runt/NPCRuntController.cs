@@ -10,6 +10,7 @@ using System.Collections.Generic;
 
 public class NPCRuntController : AdvancedFSM
 {
+    public GameObject destination;
     public static int SLOT_DIST = 3;
     public static int ATTACK_DIST = 3;
     public static int RANGED_ATTACK_DIST = 12;
