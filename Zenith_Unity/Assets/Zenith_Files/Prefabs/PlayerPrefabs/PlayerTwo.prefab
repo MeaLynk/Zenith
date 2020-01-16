@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxNumOfSlots: 6
-  distance: 1
+  distance: 3
 --- !u!114 &7225748942539960558
 MonoBehaviour:
   m_ObjectHideFlags: 0

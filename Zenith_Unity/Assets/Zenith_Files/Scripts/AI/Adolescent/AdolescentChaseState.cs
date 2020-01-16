@@ -7,10 +7,10 @@ using UnityEngine;
 
 public class AdolescentChaseState : FSMState
 {
-    NPCAdolescentController npcAdolescentController;        //NPCAdolescentController script to object
-    Health health;                                          //Health script attached to object
-    List<Health> playerHealths;                             //Health script attached to the players
-    SlotManager closestPlayerSlots;                         //SlotManager script attached to the closest player
+    NPCAdolescentController npcAdolescentController;       //NPCAdolescentController script to object
+    Health health;                                         //Health script attached to object
+    List<Health> playerHealths;                            //Health script attached to the players
+    SlotManager closestPlayerSlots;                        //SlotManager script attached to the closest player
 
     //timers intended to track when the adolescent controller should update its state and variables
     float elapsedTime;
@@ -18,7 +18,7 @@ public class AdolescentChaseState : FSMState
 
     //current playerSlot index
     int availSlotIndex;
-    
+
     //----------------------------------------------------------------------------------------------
     // Constructor
     public AdolescentChaseState(Transform[] wp, NPCAdolescentController npcAdolescent)
@@ -39,7 +39,7 @@ public class AdolescentChaseState : FSMState
         elapsedTime = 0.0f;
         intervalTime = 1.0f;
         availSlotIndex = -1;
-        curRotSpeed = 2.0f;
+        curRotSpeed = 4.0f;
         curSpeed = 3.0f;
     }
 
@@ -102,7 +102,7 @@ public class AdolescentChaseState : FSMState
 
         if (IsInCurrentRange(adolescentTransform, closestplayer, NPCAdolescentController.FLEE_DIST))
         {
-            if ((health && health.CurrentHealth <= 10) || GameManager.instance.AdolescentCount == 1)
+            if ((health && health.CurrentHealth <= 10) || GameManager.instance.RuntCount == 1)
             {
                 npcAdolescentController.PerformTransition(Transition.InDanger);
                 return;
@@ -126,7 +126,7 @@ public class AdolescentChaseState : FSMState
             }
         }
 
-        if (IsInCurrentRange(adolescentTransform, closestplayer, NPCAdolescentController.CHASE_DIST))
+        if (IsInCurrentRange(adolescentTransform, destPos, NPCAdolescentController.CHASE_DIST))
         {
             // want to check if we are close to our destination position and then transition to attack
             if (IsInCurrentRange(adolescentTransform, closestplayer, NPCAdolescentController.SLOT_DIST))

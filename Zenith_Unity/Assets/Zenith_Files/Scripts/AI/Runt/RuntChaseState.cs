@@ -39,7 +39,7 @@ public class RuntChaseState : FSMState
         elapsedTime = 0.0f;
         intervalTime = 1.0f;
         availSlotIndex = -1;
-        curRotSpeed = 2.0f;
+        curRotSpeed = 4.0f;
         curSpeed = 3.0f;
     }
 
@@ -129,7 +129,7 @@ public class RuntChaseState : FSMState
         if (IsInCurrentRange(runtTransform, destPos, NPCRuntController.CHASE_DIST))
         {
             // want to check if we are close to our destination position and then transition to attack
-            if (IsInCurrentRange(runtTransform, destPos, NPCRuntController.SLOT_DIST))
+            if (IsInCurrentRange(runtTransform, closestplayer, NPCRuntController.SLOT_DIST))
             {
                 npcRuntController.PerformTransition(Transition.ReachPlayer);
             }

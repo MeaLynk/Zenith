@@ -10,7 +10,7 @@ using System.Collections.Generic;
 
 public class NPCAdolescentController : AdvancedFSM
 {
-    public static int SLOT_DIST = 3;
+    public static int SLOT_DIST = 1;
     public static int WAYPOINT_DIST = 3;
     public static int ATTACK_DIST = 3;
     public static int CHASE_DIST = 10;
