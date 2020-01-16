@@ -265,6 +265,7 @@ GameObject:
   - component: {fileID: 6058758850748076836}
   - component: {fileID: 6058758850748076834}
   - component: {fileID: 6438909311197297114}
+  - component: {fileID: 8076185930743953918}
   m_Layer: 0
   m_Name: Adolescent
   m_TagString: Adolescent
@@ -437,6 +438,22 @@ MonoBehaviour:
   meleeDamage: 10
   meleeAttackRate: 0.5
   rangedDamage: 10
+--- !u!54 &8076185930743953918
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6058758850748076837}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6883918813689370284
 GameObject:
   m_ObjectHideFlags: 0

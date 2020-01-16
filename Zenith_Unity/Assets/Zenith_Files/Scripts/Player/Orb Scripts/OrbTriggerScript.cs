@@ -17,8 +17,8 @@ public class OrbTriggerScript : MonoBehaviour
         parent = GetComponentInParent<RemoteOrbMine>();
     }
     private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Grabbable Object" || other.tag == "Runt" || other.tag == "Player1" || other.tag == "Player2" || other.tag == "Player")
+    { 
+        if (other.tag == "Grabbable Object" || other.tag == "Runt" || other.tag == "Adolescent" || other.tag == "Player")
         {
             parent.AddObj(other.gameObject);
             //Debug.Log("Added new obj for push/pull");

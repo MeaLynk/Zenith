@@ -14,8 +14,8 @@ public class RemoteOrbMine : MonoBehaviour
 
     public Mode currentMode;
     public GameObject activeCol;
-    public float pushPower = 10;
-    public float pullPower = 10;
+    public float pushPower = 100;
+    public float pullPower = 100;
     public float throwTimer = 10;
     public float activeTimer = 5;
 
@@ -61,17 +61,13 @@ public class RemoteOrbMine : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if(other.gameObject.tag == "Orb-able Area") //Landed on orb-able area, activates orb and resets life timer
+        if(other.gameObject.tag != "Player" || other.gameObject.tag != "Runt" || other.gameObject.tag != "Adolescent" 
+            || other.gameObject.tag != "Alpha") //Landed on orb-able area, activates orb and resets life timer
         {
             //Debug.Log("Orb Successfully Activated. Hit: " + other.gameObject.tag);
             GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
             isActive = true;
             currentTimer = activeTimer; //Resets timer for active time legnth
-        }
-        else if (other.gameObject.tag == "Player" || other.gameObject.tag == "Player1" || other.gameObject.tag == "Player2") //Avoiding collision with players
-        {
-            //Debug.LogWarning("Ignored Collision. Hit: " + other.gameObject.tag);
-            //Do nothing, ignore collision
         }
         else if (isActive == false) //Collides with an surface that isn't orb-able
         {
@@ -91,13 +87,13 @@ public class RemoteOrbMine : MonoBehaviour
                 {
                     if (currentMode == Mode.PULL) //Pull orb
                     {
-                        obj.GetComponent<Rigidbody>().AddForce((transform.position - obj.transform.position).normalized * pullPower, ForceMode.Impulse);
+                        obj.GetComponent<Rigidbody>().AddForce((transform.position - obj.transform.position).normalized * pullPower, ForceMode.Force);
                         //Debug.Log(obj.name + " Is in the area.");
                     }
                     else if (currentMode == Mode.PUSH) //Push orb
                     {
                         //Debug.Log("Pushed away: " + obj.name + " at velocity of: " + -(transform.position - obj.transform.position).normalized * pushPower);
-                        obj.GetComponent<Rigidbody>().AddForce(-(transform.position - obj.transform.position).normalized * pushPower, ForceMode.Impulse);
+                        obj.GetComponent<Rigidbody>().AddForce(-(transform.position - obj.transform.position).normalized * pushPower, ForceMode.Force);
                     }
                 }
                 else //Failed to find rigidbody, shows error to unity
