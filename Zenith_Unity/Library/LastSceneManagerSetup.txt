@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Zenith_Files/Scenes/ZenithAI.unity
+- path: Assets/Zenith_Files/Scenes/ZenithRefinery.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

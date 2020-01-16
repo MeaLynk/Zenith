@@ -36,6 +36,10 @@ public class RemoteOrbThrow : MonoBehaviour
         {
             currentPlayer = PlayerType.PLAYER2;
         }
+        else
+        {
+            Debug.LogError("ERROR: FAILED TO SAVE currentPlayer VARIABLE. Please apply correct tag to: " + gameObject.name);
+        }
 
         Debug.Log(gameObject.name + " has been givin: " + currentPlayer);
     }
@@ -59,23 +63,20 @@ public class RemoteOrbThrow : MonoBehaviour
             pushAxis = Input.GetAxis("PlayerTwo_PushOrb");
         }
 
-        if (pullAxis > 0)
+        //Input for firing orb
+        if (hasBeenFired == false)
         {
-            if(hasBeenFired == false)
+            if (pullAxis > 0)
             {
                 SpawnOrb(pullOrbPrefab);
                 hasBeenFired = true;
             }
-
-            //Debug.Log("PullOrb Pressed");
-        }
-        else if(pushAxis > 0)
-        {
-            if (hasBeenFired == false)
+            else if (pushAxis > 0)
             {
                 SpawnOrb(pushOrbPrefab);
                 hasBeenFired = true;
             }
+            
         }
     }
 

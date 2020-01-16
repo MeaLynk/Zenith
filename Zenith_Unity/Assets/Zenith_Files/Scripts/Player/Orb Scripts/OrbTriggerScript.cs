@@ -18,10 +18,10 @@ public class OrbTriggerScript : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Grabbable Object" || other.tag == "Runt" || other.tag == "Player1" || other.tag == "Player2")
+        if (other.tag == "Grabbable Object" || other.tag == "Runt" || other.tag == "Player1" || other.tag == "Player2" || other.tag == "Player")
         {
             parent.AddObj(other.gameObject);
-            Debug.Log("Added new obj for push/pull");
+            //Debug.Log("Added new obj for push/pull");
         }
     }
 }
