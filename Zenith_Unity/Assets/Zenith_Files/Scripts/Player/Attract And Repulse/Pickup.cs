@@ -8,6 +8,8 @@ public class Pickup : MonoBehaviour
     public Camera playerCamera;
     public GameObject playerGuide;
     public GameObject grabbedItem;
+    public PlayerController playerController;
+    public float rightBumper;
     //public Slider AttractStamina;
     //public Slider RepulseStamina;
 
@@ -27,10 +29,13 @@ public class Pickup : MonoBehaviour
     private Renderer objRender;
     private Collider objCollider;
     private float objectMass = 0;
-    //private float aElapsedTime = 0.0f;
-    //private float rElapsedTime = 0.0f;
+    private float ElapsedTime = 0.0f;
+    private float p2ElapsedTime = 0.0f;
     //private Color aColor;
     //private Color rColor;
+
+    private bool objThrow = false;
+    private bool p2Throw = false;
 
 
     private void Start()
@@ -43,11 +48,15 @@ public class Pickup : MonoBehaviour
 
         //images = RepulseStamina.gameObject.GetComponentsInChildren<Image>();
         //rColor = images[1].color;
+
+        playerController = this.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        rightBumper = Input.GetAxis("PlayerOne_Pull");
+
         //if (AttractStamina.value < AttractStamina.maxValue && !isHolding)
         //{
         //    aElapsedTime += Time.deltaTime;
@@ -57,126 +66,102 @@ public class Pickup : MonoBehaviour
         //    rElapsedTime += Time.deltaTime;
         //}
 
-        if (Input.GetMouseButtonDown(0))
+        if (playerController.PlayerNumber == 1)
         {
-            if (!isHolding)
+            if (Input.GetAxis("PlayerOne_Pull") == 1 && !objThrow)
             {
-                Vector3 pos = Input.mousePosition;
-                pos.z = playerCamera.nearClipPlane;
-                Ray ray = playerCamera.ScreenPointToRay(pos);
-                RaycastHit raycastHit;
-                if (Physics.Raycast(ray, out raycastHit, grabDistance))
+                if (!isHolding)
                 {
-                    if (raycastHit.transform.tag == "Grabbable Object")
+                    RaycastHit raycastHit;
+
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out raycastHit, grabDistance))
                     {
-                        grabbedItem = raycastHit.collider.gameObject;
-                        objRigid = grabbedItem.GetComponent<Rigidbody>();
-                        objectMass = objRigid.mass;
-                        objRigid.mass = 1;
+                        if (raycastHit.transform.tag == "Grabbable Object" || raycastHit.transform.tag == "Runt")
+                        {
+                            grabbedItem = raycastHit.collider.gameObject;
+                            objRigid = grabbedItem.GetComponent<Rigidbody>();
+                            objectMass = objRigid.mass;
+                            objRigid.mass = 1;
 
-                        //if (AttractStamina.value - objectMass >= 0)
-                        //{
-                        //    StopCoroutine(refilStam(true));
-                        objRender = grabbedItem.GetComponent<Renderer>();
-                        objCollider = grabbedItem.GetComponent<Collider>();
+                            //if (AttractStamina.value - objectMass >= 0)
+                            //{
+                            //    StopCoroutine(refilStam(true));
 
-                        objColor = objRender.material.color;
-                        objRigid.useGravity = false;
-                        objRender.material.color = new Color(objColor.r, objColor.g, objColor.b, 0.5f);
+                            if (raycastHit.transform.tag == "Runt")
+                            {
+                                objRender = grabbedItem.GetComponentInChildren<Renderer>();
+                            }
+                            else
+                            {
+                                objRender = grabbedItem.GetComponent<Renderer>();
+                            }
+                            objCollider = grabbedItem.GetComponent<Collider>();
 
-                        //useStamina(true, objectMass);
+                            objColor = objRender.material.color;
+                            objRigid.useGravity = false;
+                            objRender.material.color = new Color(objColor.r, objColor.g, objColor.b, 0.5f);
 
-                        isHolding = true;
+                            //useStamina(true, objectMass);
 
-                        //    aElapsedTime = 0;
-                        //}
-                        //else
-                        //{
-                        //    objRigid.mass = objectMass;
-                        //    grabbedItem = null;
-                        //    objRigid = null;
-                        //    objectMass = 0;
+                            isHolding = true;
 
-                        //    StartCoroutine(flashing(true));
-                        //}
+                            //    aElapsedTime = 0;
+                            //}
+                            //else
+                            //{
+                            //    objRigid.mass = objectMass;
+                            //    grabbedItem = null;
+                            //    objRigid = null;
+                            //    objectMass = 0;
+
+                            //    StartCoroutine(flashing(true));
+                            //}
+                        }
                     }
                 }
             }
-        }
-        else if (Input.GetMouseButtonUp(0))
-        {
-            if (grabbedItem != null)
+            else if (Input.GetAxis("PlayerOne_Pull") == 0)
             {
-                isHolding = false;
-
-                grabbedItem.transform.SetParent(null);
-                objRigid.velocity = Vector3.zero;
-                objRigid.angularVelocity = Vector3.zero;
-                objRigid.useGravity = true;
-                objRender.material.color = objColor;
-                objRigid.mass = objectMass;
-                objectMass = 0;
-                grabbedItem = null;
-                objRigid = null;
-                objRender = null;
-                objCollider = null;
-                objColor = Color.white;
-            }
-        }
-
-        if (!isHolding && Input.GetMouseButtonDown(1))
-        {
-            //if (RepulseStamina.value - 20 >= 0)
-            //{
-            //    StopCoroutine(refilStam(false));
-            //    useStamina(false, 20);
-
-            RaycastHit[] raycastHit;
-
-            raycastHit = Physics.SphereCastAll(playerCamera.transform.position, 1.5f, playerCamera.transform.forward, pushDistance);
-
-            for (int i = 0; i < raycastHit.Length; i++)
-            {
-                if (raycastHit[i].collider.tag == "Grabbable Object")
+                if (grabbedItem != null)
                 {
-                    Vector3 dir = (raycastHit[i].transform.position - playerGuide.transform.position).normalized * pushForce;
+                    isHolding = false;
 
-                    raycastHit[i].collider.gameObject.GetComponent<Rigidbody>().velocity = dir;
+                    grabbedItem.transform.SetParent(null);
+                    objRigid.velocity = Vector3.zero;
+                    objRigid.angularVelocity = Vector3.zero;
+                    objRigid.useGravity = true;
+                    objRender.material.color = objColor;
+                    objRigid.mass = objectMass;
+                    objectMass = 0;
+                    grabbedItem = null;
+                    objRigid = null;
+                    objRender = null;
+                    objCollider = null;
+                    objColor = Color.white;
                 }
             }
 
-            //    rElapsedTime = 0;
-            //}
-            //else
-            //{
-            //    StartCoroutine(flashing(false));
-            //}
-        }
-
-        //check if holding
-        if (isHolding)
-        {
-            pull();
-
-            if (Input.GetMouseButtonDown(1))
+            if (!isHolding && Input.GetAxis("PlayerOne_Push") != 0)
             {
-                //if (RepulseStamina.value - objectMass >= 0)
+                //if (RepulseStamina.value - 20 >= 0)
                 //{
                 //    StopCoroutine(refilStam(false));
-                //    useStamina(false, objectMass);
+                //    useStamina(false, 20);
 
-                grabbedItem.transform.SetParent(null);
-                objRigid.AddForce(playerGuide.transform.forward * throwForce * objRigid.mass);
-                objRigid.useGravity = true;
-                objRender.material.color = objColor;
-                objRigid.mass = objectMass;
-                objectMass = 0;
-                isHolding = false;
-                grabbedItem = null;
-                objRigid = null;
-                objRender = null;
-                objCollider = null;
-                objColor = Color.white;
+                RaycastHit[] raycastHit;
+
+                raycastHit = Physics.SphereCastAll(playerCamera.transform.position, 1.5f, playerCamera.transform.forward, pushDistance);
+
+                for (int i = 0; i < raycastHit.Length; i++)
+                {
+                    if (raycastHit[i].collider.tag == "Grabbable Object" || raycastHit[i].collider.tag == "Runt")
+                    {
+                        Vector3 dir = (raycastHit[i].transform.position - playerGuide.transform.position).normalized * pushForce;
+
+                        raycastHit[i].collider.gameObject.GetComponent<Rigidbody>().velocity = dir;
+                    }
+                }
+
                 //    rElapsedTime = 0;
                 //}
                 //else
@@ -184,8 +169,200 @@ public class Pickup : MonoBehaviour
                 //    StartCoroutine(flashing(false));
                 //}
             }
-        }
 
+            //check if holding
+            if (isHolding)
+            {
+                pull();
+
+                if (Input.GetAxis("PlayerOne_Push") != 0)
+                {
+                    //if (RepulseStamina.value - objectMass >= 0)
+                    //{
+                    //    StopCoroutine(refilStam(false));
+                    //    useStamina(false, objectMass);
+
+                    grabbedItem.transform.SetParent(null);
+                    objRigid.AddForce(playerGuide.transform.forward * throwForce * objRigid.mass);
+                    objRigid.useGravity = true;
+                    objRender.material.color = objColor;
+                    objRigid.mass = objectMass;
+                    objectMass = 0;
+                    isHolding = false;
+                    grabbedItem = null;
+                    objRigid = null;
+                    objRender = null;
+                    objCollider = null;
+                    objColor = Color.white;
+                    objThrow = true;
+
+                    //    rElapsedTime = 0;
+                    //}
+                    //else
+                    //{
+                    //    StartCoroutine(flashing(false));
+                    //}
+                }
+            }
+
+            if(objThrow)
+            {
+                ElapsedTime += Time.deltaTime;
+
+                if(ElapsedTime >= 0.6f)
+                {
+                    ElapsedTime = 0;
+                    objThrow = false;
+                }
+            }
+        }
+        if (playerController.PlayerNumber == 2)
+        {
+            if (Input.GetAxis("PlayerTwo_Pull") == 1 && !objThrow)
+            {
+                if (!isHolding)
+                {
+                    RaycastHit raycastHit;
+                    if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out raycastHit, grabDistance))
+                    {
+                        if (raycastHit.transform.tag == "Grabbable Object" || raycastHit.transform.tag == "Runt")
+                        {
+                            grabbedItem = raycastHit.collider.gameObject;
+                            objRigid = grabbedItem.GetComponent<Rigidbody>();
+                            objectMass = objRigid.mass;
+                            objRigid.mass = 1;
+
+                            //if (AttractStamina.value - objectMass >= 0)
+                            //{
+                            //    StopCoroutine(refilStam(true));
+                            if (raycastHit.transform.tag == "Runt")
+                            {
+                                objRender = grabbedItem.GetComponentInChildren<Renderer>();
+                            }
+                            else
+                            {
+                                objRender = grabbedItem.GetComponent<Renderer>();
+                            }
+                            objCollider = grabbedItem.GetComponent<Collider>();
+
+                            objColor = objRender.material.color;
+                            objRigid.useGravity = false;
+                            objRender.material.color = new Color(objColor.r, objColor.g, objColor.b, 0.5f);
+
+                            //useStamina(true, objectMass);
+
+                            isHolding = true;
+
+                            //    aElapsedTime = 0;
+                            //}
+                            //else
+                            //{
+                            //    objRigid.mass = objectMass;
+                            //    grabbedItem = null;
+                            //    objRigid = null;
+                            //    objectMass = 0;
+
+                            //    StartCoroutine(flashing(true));
+                            //}
+                        }
+                    }
+                }
+            }
+            else if (Input.GetAxis("PlayerTwo_Pull") == 0)
+            {
+                if (grabbedItem != null)
+                {
+                    isHolding = false;
+
+                    grabbedItem.transform.SetParent(null);
+                    objRigid.velocity = Vector3.zero;
+                    objRigid.angularVelocity = Vector3.zero;
+                    objRigid.useGravity = true;
+                    objRender.material.color = objColor;
+                    objRigid.mass = objectMass;
+                    objectMass = 0;
+                    grabbedItem = null;
+                    objRigid = null;
+                    objRender = null;
+                    objCollider = null;
+                    objColor = Color.white;
+                }
+            }
+
+            if (!isHolding && Input.GetAxis("PlayerTwo_Push") != 0)
+            {
+                //if (RepulseStamina.value - 20 >= 0)
+                //{
+                //    StopCoroutine(refilStam(false));
+                //    useStamina(false, 20);
+
+                RaycastHit[] raycastHit;
+
+                raycastHit = Physics.SphereCastAll(playerCamera.transform.position, 1.5f, playerCamera.transform.forward, pushDistance);
+
+                for (int i = 0; i < raycastHit.Length; i++)
+                {
+                    if (raycastHit[i].collider.tag == "Grabbable Object" || raycastHit[i].collider.tag == "Runt")
+                    {
+                        Vector3 dir = (raycastHit[i].transform.position - playerGuide.transform.position).normalized * pushForce;
+
+                        raycastHit[i].collider.gameObject.GetComponent<Rigidbody>().velocity = dir;
+                    }
+                }
+
+                //    rElapsedTime = 0;
+                //}
+                //else
+                //{
+                //    StartCoroutine(flashing(false));
+                //}
+            }
+
+            //check if holding
+            if (isHolding)
+            {
+                pull();
+
+                if (Input.GetAxis("PlayerTwo_Push") != 0)
+                {
+                    //if (RepulseStamina.value - objectMass >= 0)
+                    //{
+                    //    StopCoroutine(refilStam(false));
+                    //    useStamina(false, objectMass);
+
+                    grabbedItem.transform.SetParent(null);
+                    objRigid.AddForce(playerGuide.transform.forward * throwForce * objRigid.mass);
+                    objRigid.useGravity = true;
+                    objRender.material.color = objColor;
+                    objRigid.mass = objectMass;
+                    objectMass = 0;
+                    isHolding = false;
+                    grabbedItem = null;
+                    objRigid = null;
+                    objRender = null;
+                    objCollider = null;
+                    objColor = Color.white;
+                    objThrow = true;
+                    //    rElapsedTime = 0;
+                    //}
+                    //else
+                    //{
+                    //    StartCoroutine(flashing(false));
+                    //}
+                }
+            }
+
+            if (objThrow)
+            {
+                ElapsedTime += Time.deltaTime;
+
+                if (ElapsedTime >= 0.6f)
+                {
+                    ElapsedTime = 0;
+                    objThrow = false;
+                }
+            }
+        }
         //if(!isHolding && aElapsedTime >= 2)
         //{
         //    StartCoroutine(refilStam(true));
