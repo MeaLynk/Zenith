@@ -98,7 +98,7 @@ public class RemoteOrbMine : MonoBehaviour
                 }
                 else //Failed to find rigidbody, shows error to unity
                 {
-                    Debug.LogError("ERROR: FAILED TO USE ORB. " + obj.name + " DOES NOT HAVE WORKING RIGIDBODY.");
+                   // Debug.LogError("ERROR: FAILED TO USE ORB. " + obj.name + " DOES NOT HAVE WORKING RIGIDBODY.");
                 }
             }
             //else //Obj left active area

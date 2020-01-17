@@ -78,7 +78,7 @@ public class NPCRuntController : AdvancedFSM
             Health = this.GetComponent<Health>();
         else
             Health = this.gameObject.AddComponent<Health>();
-        
+
         PlayerTarget = 0;
 
         // Create the FSM for the runt.

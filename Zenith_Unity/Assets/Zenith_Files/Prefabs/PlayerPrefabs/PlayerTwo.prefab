@@ -416,6 +416,8 @@ MonoBehaviour:
   playerCamera: {fileID: 7225748942744479244}
   playerGuide: {fileID: 3323570439988322005}
   grabbedItem: {fileID: 0}
+  playerController: {fileID: 0}
+  rightBumper: 0
   isHolding: 0
   inPos: 0
   grabDistance: 25

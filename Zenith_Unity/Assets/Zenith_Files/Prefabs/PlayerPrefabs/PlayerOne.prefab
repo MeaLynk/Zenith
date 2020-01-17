@@ -41,8 +41,7 @@ GameObject:
   - component: {fileID: 3055609668682295535}
   - component: {fileID: 3055609668682295520}
   - component: {fileID: 3055609668682295521}
-  - component: {fileID: 3055609668682295534}
-  m_Layer: 8
+  m_Layer: 9
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -109,20 +108,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &3055609668682295534
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3055609668682295532}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3055609668872508580
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,6 +416,8 @@ MonoBehaviour:
   playerCamera: {fileID: 3055609668873885316}
   playerGuide: {fileID: 4318395311262267202}
   grabbedItem: {fileID: 0}
+  playerController: {fileID: 0}
+  rightBumper: 0
   isHolding: 0
   inPos: 0
   grabDistance: 25
